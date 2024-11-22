@@ -1,1 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows 11 CMD</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body {
+      font-family: 'Consolas', monospace;
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .cmd-container {
+      width: 80%;
+      max-width: 900px;
+      height: 80%;
+      max-height: 600px;
+      background: rgba(40, 40, 40, 0.7);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cmd-header {
+      background: linear-gradient(135deg, #3b185f, #622a78);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #ddd;
+    }
+
+    .cmd-header .buttons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .cmd-header .button {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: #888;
+    }
+
+    .cmd-header .button.close {
+      background-color: #ff5e57;
+    }
+
+    .cmd-header .button.minimize {
+      background-color: #ffbd2e;
+    }
+
+    .cmd-header .button.maximize {
+      background-color: #28c840;
+    }
+
+    .cmd-body {
+      padding: 20px;
+      flex: 1;
+      overflow-y: auto;
+      color: #c3c3c3;
+    }
+
+    .cmd-body .command {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .cmd-body .command::before {
+      content: 'C:\\>';
+      color: #8f8;
+    }
+
+    .cmd-body .text {
+      color: #fff;
+    }
+
+    .cmd-body .cursor {
+      background-color: #fff;
+      width: 10px;
+      height: 18px;
+      display: inline-block;
+      animation: blink 0.8s step-start infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .cmd-footer {
+      padding: 10px;
+      background: linear-gradient(135deg, #622a78, #3b185f);
+      color: #ccc;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="cmd-container">
+    <div class="cmd-header">
+      <span>Command Prompt</span>
+      <div class="buttons">
+        <div class="button close"></div>
+        <div class="button minimize"></div>
+        <div class="button maximize"></div>
+      </div>
+    </div>
+    <div class="cmd-body">
+      <div class="command">
+        <span class="text">Hello, this is a custom Windows 11 themed CMD!</span>
+      </div>
+      <div class="command">
+        <span class="text">Try typing some commands...</span>
+        <div class="cursor"></div>
+      </div>
+    </div>
+    <div class="cmd-footer">
+      Windows 11 CMD Style | low_kb Design
+    </div>
+  </div>
+</body>
+</html>

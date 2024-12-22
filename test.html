@@ -1,141 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Windows 11 CMD</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Consolas', monospace;
-      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-    .cmd-container {
-      width: 80%;
-      max-width: 900px;
-      height: 80%;
-      max-height: 600px;
-      background: rgba(40, 40, 40, 0.7);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-      border-radius: 10px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .cmd-header {
-      background: linear-gradient(135deg, #3b185f, #622a78);
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      color: #ddd;
-    }
-
-    .cmd-header .buttons {
-      display: flex;
-      gap: 8px;
-    }
-
-    .cmd-header .button {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: #888;
-    }
-
-    .cmd-header .button.close {
-      background-color: #ff5e57;
-    }
-
-    .cmd-header .button.minimize {
-      background-color: #ffbd2e;
-    }
-
-    .cmd-header .button.maximize {
-      background-color: #28c840;
-    }
-
-    .cmd-body {
-      padding: 20px;
-      flex: 1;
-      overflow-y: auto;
-      color: #c3c3c3;
-    }
-
-    .cmd-body .command {
-      display: flex;
-      gap: 5px;
-      align-items: center;
-    }
-
-    .cmd-body .command::before {
-      content: 'C:\\>';
-      color: #8f8;
-    }
-
-    .cmd-body .text {
-      color: #fff;
-    }
-
-    .cmd-body .cursor {
-      background-color: #fff;
-      width: 10px;
-      height: 18px;
-      display: inline-block;
-      animation: blink 0.8s step-start infinite;
-    }
-
-    @keyframes blink {
-      50% {
-        opacity: 0;
-      }
-    }
-
-    .cmd-footer {
-      padding: 10px;
-      background: linear-gradient(135deg, #622a78, #3b185f);
-      color: #ccc;
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio programisty backend - low_kb</title>
+    <meta name="description" content="low_kb to doświadczony backend developer specjalizujący się w technologiach takich jak JavaScript, TypeScript, Java oraz C#. Sprawdź moje projekty!">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Dodaj linki do ikon dla lepszej prezentacji w wynikach wyszukiwania -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Dodaj Open Graph tags dla lepszego udostępniania w mediach społecznościowych -->
+    <meta property="og:title" content="Portfolio programisty backend - low_kb">
+    <meta property="og:description" content="low_kb to doświadczony backend developer specjalizujący się w technologiach takich jak JavaScript, TypeScript, Java oraz C#. Sprawdź moje projekty!">
+    <meta property="og:image" content="thumbnail.png">
+    <meta property="og:url" content="https://lowkb.github.io/">
+    <meta property="og:type" content="website">
 </head>
 <body>
-  <div class="cmd-container">
-    <div class="cmd-header">
-      <span>Command Prompt</span>
-      <div class="buttons">
-        <div class="button close"></div>
-        <div class="button minimize"></div>
-        <div class="button maximize"></div>
-      </div>
-    </div>
-    <div class="cmd-body">
-      <div class="command">
-        <span class="text">Hello, this is a custom Windows 11 themed CMD!</span>
-      </div>
-      <div class="command">
-        <span class="text">Try typing some commands...</span>
-        <div class="cursor"></div>
-      </div>
-    </div>
-    <div class="cmd-footer">
-      Windows 11 CMD Style | low_kb Design
-    </div>
-  </div>
+    <header>
+        <h1>Portfolio programisty backend - <span id="nickname">low_kb</span></h1>
+        <!-- Dodaj nawigację dla lepszej struktury strony -->
+        <nav>
+            <ul>
+                <li><a href="#o-mnie">O mnie</a></li>
+                <li><a href="#projekty">Projekty</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="o-mnie">
+            <h2>O mnie</h2>
+            <p>Jestem profesjonalistą z bogatym doświadczeniem w tworzeniu aplikacji backendowych i systemów zarządzania danymi. Pracuję z językami <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>Java</strong> i <strong>C#</strong>, dostarczając skalowalne i wydajne rozwiązania oparte na nowoczesnych technologiach.</p>
+            <p>Nick "<span id="nickname">low_kb</span>" symbolizuje moje podejście do kodowania - skuteczność, minimalizm i wysoką jakość w każdym projekcie. Skupiam się na optymalizacji oraz wydajności kodu, tak aby każdy bit miał znaczenie.</p>
+        </section>
+        <section id="projekty">
+            <h2>Projekty</h2>
+            <p>Moje projekty obejmują szeroki zakres aplikacji backendowych i systemów API, od prostych rozwiązań serwerowych po złożone architektury rozproszone. W projektach stosuję zasady OOP i wzorce projektowe, aby zapewnić elastyczność i skalowalność.</p>
+            <!-- Dodaj listę projektów z linkami -->
+            <ul>
+                <li><a href="https://github.com/lowkb/projekt1">Projekt 1 - Opis projektu</a></li>
+                <li><a href="https://github.com/lowkb/projekt2">Projekt 2 - Opis projektu</a></li>
+                <li><a href="https://github.com/lowkb/projekt3">Projekt 3 - Opis projektu</a></li>
+            </ul>
+        </section>
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+            <p>Chcesz porozmawiać o potencjalnym projekcie lub współpracy? Skontaktuj się ze mną:</p>
+            <ul>
+                <li>Email: <a href="mailto:lowkb.dev@gmail.com">lowkb.dev@gmail.com</a></li>
+                <li>Discord: <a href="https://discordapp.com/users/low_kb">low_kb</a></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 low_kb. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <!-- Dodaj skrypt do analityki, jeśli jest potrzebny -->
+    <!-- <script src="analytics.js"></script> -->
 </body>
 </html>

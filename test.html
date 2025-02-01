@@ -24,35 +24,7 @@
             padding: 2rem;
         }
 
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #6c63ff;
-        }
-
-        .glass-card {
+        .card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border-radius: 15px;
@@ -74,7 +46,7 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 0.1rem;
             margin-top: 2rem;
         }
 
@@ -116,21 +88,13 @@
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#about">O mnie</a></li>
-            <li><a href="#projects">Projekty</a></li>
-            <li><a href="#contact">Kontakt</a></li>
-        </ul>
-    </nav>
-
     <div class="container">
         <section class="hero">
             <h1>low_kb</h1>
             <p>Backend Developer &amp; Software Architect</p>
         </section>
 
-        <section id="about" class="glass-card">
+        <section id="about" class="card">
             <h2>O mnie</h2>
             <p>Jestem profesjonalistą z bogatym doświadczeniem w tworzeniu aplikacji backendowych i systemów zarządzania danymi. Specjalizuję się w technologiach:</p>
             <div style="margin-top: 1rem;">

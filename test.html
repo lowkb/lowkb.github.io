@@ -48,39 +48,6 @@
             object-fit: cover;
         }
 
-        /* Nawigacja */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(10, 10, 10, 0.95);
-            padding: 1rem;
-            box-shadow: 0 2px 10px var(--accent-color);
-            z-index: 1000;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--light-color);
-            font-weight: 500;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-            text-shadow: 0 0 10px var(--accent-color);
-        }
-
         /* Sekcja Hero */
         .hero {
             height: 100vh;
@@ -289,16 +256,7 @@
     </style>
 </head>
 <body>
-
-    <!-- Nawigacja -->
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#home">Strona główna</a></li>
-            <li><a href="#projects">Projekty</a></li>
-            <li><a href="#skills">Umiejętności</a></li>
-        </ul>
-    </nav>
-
+    
     <!-- Avatar -->
     <div class="avatar reveal">
         <img src="twoje-zdjecie.jpg" alt="Twoje zdjęcie">

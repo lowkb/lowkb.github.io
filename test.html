@@ -3,212 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>low_kb | Backend Developer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>low_kb - Portfolio</title>
     <style>
-        :root {
-            --discord-dark: #1a1a1a;
-            --discord-secondary: #2d2d2d;
-            --discord-text: #e0e0e0;
-            --discord-primary: #5865f2;
-            --backend-blue: #2b6db1;
-            --code-green: #4ec9b0;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
-            background-color: var(--discord-dark);
-            color: var(--discord-text);
-            font-family: 'Consolas', 'Courier New', monospace;
-            margin: 0;
-            line-height: 1.6;
+            background: linear-gradient(45deg, #0a0a2e, #1a1a4a);
+            color: #ffffff;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 780px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 2rem;
         }
 
-        .profile-banner {
-            height: 200px;
-            background: linear-gradient(45deg, #121212, #2d2d2d);
-            position: relative;
-            border-radius: 8px 8px 0 0;
-        }
-
-        .profile-avatar {
-            position: absolute;
-            bottom: -50px;
-            left: 30px;
-            border: 6px solid var(--discord-dark);
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            overflow: hidden;
-            background: #2d2d2d;
-        }
-
-        .profile-avatar img {
+        nav {
+            position: fixed;
+            top: 0;
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .online-status {
-            position: absolute;
-            bottom: 5px;
-            right: 5px;
-            width: 20px;
-            height: 20px;
-            background: #57f287;
-            border-radius: 50%;
-            border: 3px solid var(--discord-dark);
-        }
-
-        .profile-info {
-            background: var(--discord-secondary);
-            padding: 80px 30px 30px;
-            border-radius: 0 0 8px 8px;
-        }
-
-        .username {
-            font-size: 1.8rem;
-            font-weight: 600;
-            margin-bottom: 5px;
-            color: var(--code-green);
-        }
-
-        .badges-container {
+        nav ul {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin: 20px 0;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .role-badge {
-            background: #40444b;
-            padding: 8px 15px;
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #6c63ff;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
             border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-5px);
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            margin: 0.3rem;
+            background: rgba(108, 99, 255, 0.2);
+            border-radius: 20px;
             font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid var(--backend-blue);
         }
 
-        .javascript { background: #323330; color: #f0db4f; }
-        .typescript { background: #3178c6; color: white; }
-        .java { background: #5382a1; color: #f89820; }
-        .csharp { background: #682876; color: white; }
-
-        .section {
-            background: var(--discord-dark);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 5px;
-        }
-
-        .section h3 {
-            color: var(--code-green);
-            margin-bottom: 15px;
-        }
-
-        .contact-info {
-            margin-top: 30px;
-            padding: 15px;
-            background: var(--discord-dark);
-            border-radius: 5px;
+        .contact-section {
+            text-align: center;
+            padding: 4rem 0;
         }
 
         @media (max-width: 768px) {
             .container {
-                padding: 10px;
+                padding: 1rem;
             }
-
-            .profile-avatar {
-                left: 50%;
-                transform: translateX(-50%);
-                bottom: -60px;
-            }
-
-            .profile-info {
-                padding-top: 80px;
-                text-align: center;
-            }
-
-            .badges-container {
-                justify-content: center;
+            
+            .hero h1 {
+                font-size: 2.5rem;
             }
         }
     </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><a href="#about">O mnie</a></li>
+            <li><a href="#projects">Projekty</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+        </ul>
+    </nav>
+
     <div class="container">
-        <div class="profile-banner">
-            <div class="profile-avatar">
-                <img src="avatar-placeholder.png" alt="low_kb">
-                <div class="online-status"></div>
-            </div>
-        </div>
+        <section class="hero">
+            <h1>low_kb</h1>
+            <p>Backend Developer &amp; Software Architect</p>
+        </section>
 
-        <div class="profile-info">
-            <h1 class="username">low_kb<span style="color: #72767d;">#dev</span></h1>
-            
-            <div class="badges-container">
-                <div class="role-badge javascript">
-                    <i class="fab fa-js"></i>
-                    JavaScript
-                </div>
-                <div class="role-badge typescript">
-                    <i class="fas fa-code"></i>
-                    TypeScript
-                </div>
-                <div class="role-badge java">
-                    <i class="fab fa-java"></i>
-                    Java
-                </div>
-                <div class="role-badge csharp">
-                    <i class="fas fa-cube"></i>
-                    C#
-                </div>
+        <section id="about" class="glass-card">
+            <h2>O mnie</h2>
+            <p>Jestem profesjonalistą z bogatym doświadczeniem w tworzeniu aplikacji backendowych i systemów zarządzania danymi. Specjalizuję się w technologiach:</p>
+            <div style="margin-top: 1rem;">
+                <span class="tech-badge">JavaScript</span>
+                <span class="tech-badge">TypeScript</span>
+                <span class="tech-badge">Java</span>
+                <span class="tech-badge">C#</span>
             </div>
+        </section>
 
-            <div class="section">
-                <h3>🚀 O MNIE</h3>
-                <p>Profesjonalista z bogatym doświadczeniem w tworzeniu aplikacji backendowych i systemów zarządzania danymi. Specjalizacja w:</p>
-                <ul>
-                    <li>Architektura skalowalnych systemów</li>
-                    <li>Optymalizacja wydajności</li>
-                    <li>Wzorce projektowe OOP</li>
-                    <li>Rozwiązania oparte na chmurze</li>
-                </ul>
-                <p>Nick "low_kb" symbolizuje podejście: minimalizm, efektywność i dbałość o każdy bit!</p>
+        <section id="projects" class="glass-card">
+            <h2>Projekty</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>System API Gateway</h3>
+                    <p>Wysokowydajny system zarządzania ruchem API</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="tech-badge">Node.js</span>
+                        <span class="tech-badge">TypeScript</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Platforma E-commerce</h3>
+                    <p>Skalowalna platforma transakcyjna</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">Spring Boot</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>System Analytics</h3>
+                    <p>System analizy danych w czasie rzeczywistym</p>
+                    <div style="margin-top: 1rem;">
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">.NET Core</span>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="section">
-                <h3>💻 PROJEKTY</h3>
-                <p>Wybrane realizacje:</p>
-                <ul>
-                    <li>System mikroserwisowy dla fintech</li>
-                    <li>API Gateway dla aplikacji IoT</li>
-                    <li>Platforma do przetwarzania danych w czasie rzeczywistym</li>
-                    <li>Rozproszony system kolejkowania</li>
-                </ul>
-                <p>Technologie: Node.js, .NET Core, Spring Boot, Docker, Redis</p>
+        <section id="contact" class="contact-section">
+            <div class="glass-card">
+                <h2>Kontakt</h2>
+                <p style="margin: 1rem 0;">Email: lowkb.dev@gmail.com</p>
+                <p>Discord: low_kb</p>
             </div>
-
-            <div class="contact-info">
-                <h3>📩 KONTAKT</h3>
-                <p>
-                    <i class="fas fa-envelope"></i> Email: 
-                    <a href="mailto:lowkb.dev@gmail.com" style="color: var(--code-green);">lowkb.dev@gmail.com</a>
-                </p>
-                <p>
-                    <i class="fab fa-discord"></i> Discord: 
-                    <span style="color: var(--code-green);">low_kb#dev</span>
-                </p>
-            </div>
-        </div>
+        </section>
     </div>
 </body>
 </html>

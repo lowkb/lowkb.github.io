@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord-Style Portfolio</title>
+    <title>low_kb | Backend Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --discord-dark: #36393f;
-            --discord-secondary: #2f3136;
-            --discord-text: #dcddde;
+            --discord-dark: #1a1a1a;
+            --discord-secondary: #2d2d2d;
+            --discord-text: #e0e0e0;
             --discord-primary: #5865f2;
-            --discord-green: #57f287;
-            --discord-red: #ed4245;
+            --backend-blue: #2b6db1;
+            --code-green: #4ec9b0;
         }
 
         body {
             background-color: var(--discord-dark);
             color: var(--discord-text);
-            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'Consolas', 'Courier New', monospace;
             margin: 0;
-            line-height: 1.5;
+            line-height: 1.6;
         }
 
         .container {
@@ -29,10 +29,9 @@
             padding: 20px;
         }
 
-        /* Banner i Avatar */
         .profile-banner {
             height: 200px;
-            background: linear-gradient(45deg, #2f3136, #40444b);
+            background: linear-gradient(45deg, #121212, #2d2d2d);
             position: relative;
             border-radius: 8px 8px 0 0;
         }
@@ -46,7 +45,7 @@
             width: 120px;
             height: 120px;
             overflow: hidden;
-            background: #2f3136;
+            background: #2d2d2d;
         }
 
         .profile-avatar img {
@@ -61,12 +60,11 @@
             right: 5px;
             width: 20px;
             height: 20px;
-            background: var(--discord-green);
+            background: #57f287;
             border-radius: 50%;
             border: 3px solid var(--discord-dark);
         }
 
-        /* Sekcja Informacji */
         .profile-info {
             background: var(--discord-secondary);
             padding: 80px 30px 30px;
@@ -74,17 +72,12 @@
         }
 
         .username {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 600;
             margin-bottom: 5px;
+            color: var(--code-green);
         }
 
-        .discriminator {
-            color: #72767d;
-            font-size: 1.2rem;
-        }
-
-        /* Rangi/Technologie */
         .badges-container {
             display: flex;
             flex-wrap: wrap;
@@ -94,62 +87,38 @@
 
         .role-badge {
             background: #40444b;
-            padding: 5px 12px;
-            border-radius: 12px;
+            padding: 8px 15px;
+            border-radius: 15px;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            border: 1px solid var(--backend-blue);
         }
 
-        .role-badge::before {
-            content: '';
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
+        .javascript { background: #323330; color: #f0db4f; }
+        .typescript { background: #3178c6; color: white; }
+        .java { background: #5382a1; color: #f89820; }
+        .csharp { background: #682876; color: white; }
 
-        .javascript { background: #f7df1e; color: #000; }
-        .python { background: #3776ab; }
-        .react { background: #61dafb; color: #000; }
-        .node { background: #68a063; }
-
-        /* Sekcja Projektów */
-        .projects-section {
-            margin-top: 30px;
-            background: var(--discord-secondary);
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        .project-card {
+        .section {
             background: var(--discord-dark);
-            padding: 15px;
-            margin: 15px 0;
+            padding: 20px;
+            margin: 20px 0;
             border-radius: 5px;
-            border-left: 4px solid var(--discord-primary);
+            border-left: 4px solid var(--backend-blue);
         }
 
-        .project-title {
-            color: var(--discord-text);
-            font-weight: 600;
-            margin-bottom: 8px;
+        .section h3 {
+            color: var(--code-green);
+            margin-bottom: 15px;
         }
 
-        /* Przyciski */
-        .discord-button {
-            background: var(--discord-primary);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-weight: 500;
-            margin: 10px 0;
-        }
-
-        .discord-button:hover {
-            background: #4752c4;
+        .contact-info {
+            margin-top: 30px;
+            padding: 15px;
+            background: var(--discord-dark);
+            border-radius: 5px;
         }
 
         @media (max-width: 768px) {
@@ -178,55 +147,68 @@
     <div class="container">
         <div class="profile-banner">
             <div class="profile-avatar">
-                <img src="avatar.jpg" alt="Profilowe">
+                <img src="avatar-placeholder.png" alt="low_kb">
                 <div class="online-status"></div>
             </div>
         </div>
 
         <div class="profile-info">
-            <h1 class="username">DevMaster<span class="discriminator">#1234</span></h1>
+            <h1 class="username">low_kb<span style="color: #72767d;">#dev</span></h1>
             
             <div class="badges-container">
                 <div class="role-badge javascript">
                     <i class="fab fa-js"></i>
                     JavaScript
                 </div>
-                <div class="role-badge python">
-                    <i class="fab fa-python"></i>
-                    Python
+                <div class="role-badge typescript">
+                    <i class="fas fa-code"></i>
+                    TypeScript
                 </div>
-                <div class="role-badge react">
-                    <i class="fab fa-react"></i>
-                    React
+                <div class="role-badge java">
+                    <i class="fab fa-java"></i>
+                    Java
                 </div>
-                <div class="role-badge node">
-                    <i class="fab fa-node"></i>
-                    Node.js
-                </div>
-            </div>
-
-            <div class="bio-section">
-                <h3>O MNIE</h3>
-                <p>🔭 Aktualnie pracuję nad systemem AI<br>
-                🌱 Uczę się cybersecurity<br>
-                💬 Zapytaj mnie o frameworki JS</p>
-            </div>
-
-            <div class="projects-section">
-                <h3>AKTYWNE PROJEKTY</h3>
-                <div class="project-card">
-                    <div class="project-title">Discord Bot</div>
-                    <p>Zaawansowany bot zarządzający serwerem z AI</p>
-                </div>
-                <div class="project-card">
-                    <div class="project-title">E-commerce Platform</div>
-                    <p>Pełny system sprzedażowy z React i Node.js</p>
+                <div class="role-badge csharp">
+                    <i class="fas fa-cube"></i>
+                    C#
                 </div>
             </div>
 
-            <button class="discord-button">
-                <i class="fab fa-discord"></i> Skontaktuj się ze mną
-            </button>
+            <div class="section">
+                <h3>🚀 O MNIE</h3>
+                <p>Profesjonalista z bogatym doświadczeniem w tworzeniu aplikacji backendowych i systemów zarządzania danymi. Specjalizacja w:</p>
+                <ul>
+                    <li>Architektura skalowalnych systemów</li>
+                    <li>Optymalizacja wydajności</li>
+                    <li>Wzorce projektowe OOP</li>
+                    <li>Rozwiązania oparte na chmurze</li>
+                </ul>
+                <p>Nick "low_kb" symbolizuje podejście: minimalizm, efektywność i dbałość o każdy bit!</p>
+            </div>
+
+            <div class="section">
+                <h3>💻 PROJEKTY</h3>
+                <p>Wybrane realizacje:</p>
+                <ul>
+                    <li>System mikroserwisowy dla fintech</li>
+                    <li>API Gateway dla aplikacji IoT</li>
+                    <li>Platforma do przetwarzania danych w czasie rzeczywistym</li>
+                    <li>Rozproszony system kolejkowania</li>
+                </ul>
+                <p>Technologie: Node.js, .NET Core, Spring Boot, Docker, Redis</p>
+            </div>
+
+            <div class="contact-info">
+                <h3>📩 KONTAKT</h3>
+                <p>
+                    <i class="fas fa-envelope"></i> Email: 
+                    <a href="mailto:lowkb.dev@gmail.com" style="color: var(--code-green);">lowkb.dev@gmail.com</a>
+                </p>
+                <p>
+                    <i class="fab fa-discord"></i> Discord: 
+                    <span style="color: var(--code-green);">low_kb#dev</span>
+                </p>
+            </div>
         </div>
     </div>
 </body>

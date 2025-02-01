@@ -155,18 +155,6 @@
             transform: translateX(10px);
         }
 
-        /* Animacje */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 1s ease;
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* Responsywność */
         @media (max-width: 768px) {
             .navbar {
@@ -234,7 +222,7 @@
     
     <!-- Sekcja Hero -->
     <section id="home" class="hero">
-        <div class="hero-content reveal">
+        <div class="hero-content">
             <h1>Cześć, Jestem [Imię]</h1>
             <p>Full Stack Developer & Cyber Security Specialist</p>
             <button>Zobacz Portfolio</button>
@@ -278,34 +266,5 @@
             <!-- Dodaj więcej umiejętności -->
         </div>
     </section>
-
-    <script>
-        // Animacje przy przewijaniu
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealOnScroll = () => {
-            revealElements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const windowHeight = window.innerHeight;
-                
-                if (elementTop < windowHeight - 100) {
-                    element.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll();
-
-        // Gładkie przewijanie
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
 </body>
 </html>

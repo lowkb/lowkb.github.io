@@ -3,268 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | [Twoje Imię]</title>
+    <title>Discord-Style Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #8A2BE2;
-            --secondary-color: #4B0082;
-            --dark-color: #0A0A0A;
-            --accent-color: #9400D3;
-            --light-color: #F8F8FF;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            --discord-dark: #36393f;
+            --discord-secondary: #2f3136;
+            --discord-text: #dcddde;
+            --discord-primary: #5865f2;
+            --discord-green: #57f287;
+            --discord-red: #ed4245;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: var(--dark-color);
-            color: var(--light-color);
-            overflow-x: hidden;
-        }
-        
-        /* Sekcja Hero */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            position: relative;
-            margin-top: 80px;
+            background-color: var(--discord-dark);
+            color: var(--discord-text);
+            font-family: 'Whitney', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            line-height: 1.5;
         }
 
-        .hero::after {
-            content: '';
+        .container {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Banner i Avatar */
+        .profile-banner {
+            height: 200px;
+            background: linear-gradient(45deg, #2f3136, #40444b);
+            position: relative;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .profile-avatar {
             position: absolute;
             bottom: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 50px;
-            background: var(--light-color);
-        }
-
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: var(--light-color);
-        }
-
-        /* Projekty */
-        .projects {
-            padding: 5rem 1rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            left: 30px;
+            border: 6px solid var(--discord-dark);
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.2);
-            transition: var(--transition);
-            border: 1px solid var(--primary-color);
+            background: #2f3136;
         }
 
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px var(--accent-color);
-        }
-
-        .project-image {
-            height: 200px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .project-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, var(--primary-color), transparent);
-            opacity: 0.3;
-        }
-
-        .project-image img {
+        .profile-avatar img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
 
-        .project-info {
-            padding: 1.5rem;
+        .online-status {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+            width: 20px;
+            height: 20px;
+            background: var(--discord-green);
+            border-radius: 50%;
+            border: 3px solid var(--discord-dark);
         }
 
-        /* Umiejętności */
-        .skills {
-            padding: 5rem 1rem;
-            background: rgba(10, 10, 10, 0.9);
+        /* Sekcja Informacji */
+        .profile-info {
+            background: var(--discord-secondary);
+            padding: 80px 30px 30px;
+            border-radius: 0 0 8px 8px;
         }
 
-        .skills-grid {
+        .username {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .discriminator {
+            color: #72767d;
+            font-size: 1.2rem;
+        }
+
+        /* Rangi/Technologie */
+        .badges-container {
             display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-            max-width: 800px;
-            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
         }
 
-        .skill-item {
-            text-align: left;
-            padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
-            transition: var(--transition);
-            border: 1px solid var(--primary-color);
+        .role-badge {
+            background: #40444b;
+            padding: 5px 12px;
+            border-radius: 12px;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 8px;
         }
 
-        .skill-item i {
-            font-size: 2rem;
-            min-width: 50px;
-            text-align: center;
-            color: var(--primary-color);
-            text-shadow: 0 0 15px var(--accent-color);
+        .role-badge::before {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
         }
 
-        .skill-item:hover {
-            background: rgba(138, 43, 226, 0.1);
-            transform: translateX(10px);
+        .javascript { background: #f7df1e; color: #000; }
+        .python { background: #3776ab; }
+        .react { background: #61dafb; color: #000; }
+        .node { background: #68a063; }
+
+        /* Sekcja Projektów */
+        .projects-section {
+            margin-top: 30px;
+            background: var(--discord-secondary);
+            padding: 20px;
+            border-radius: 8px;
         }
 
-        /* Responsywność */
+        .project-card {
+            background: var(--discord-dark);
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            border-left: 4px solid var(--discord-primary);
+        }
+
+        .project-title {
+            color: var(--discord-text);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /* Przyciski */
+        .discord-button {
+            background: var(--discord-primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: 500;
+            margin: 10px 0;
+        }
+
+        .discord-button:hover {
+            background: #4752c4;
+        }
+
         @media (max-width: 768px) {
-            .navbar {
-                padding: 0.5rem;
+            .container {
+                padding: 10px;
             }
 
-            .nav-links {
-                gap: 0.5rem;
-                font-size: 0.8rem;
+            .profile-avatar {
+                left: 50%;
+                transform: translateX(-50%);
+                bottom: -60px;
             }
 
-            .hero {
-                margin-top: 60px;
-                padding: 1rem;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-                margin-top: 2rem;
-            }
-
-            .hero-content p {
-                font-size: 1rem;
-            }
-
-            .project-card {
-                margin: 0 0.5rem;
-            }
-
-            .skill-item {
-                flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
-                padding: 1rem;
-            }
-
-            .skill-item i {
-                font-size: 1.5rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: space-around;
-                gap: 0.5rem;
-            }
-
-            .nav-links li {
-                flex: 1 1 45%;
+            .profile-info {
+                padding-top: 80px;
                 text-align: center;
             }
 
-            .hero-content h1 {
-                font-size: 1.8rem;
-            }
-
-            .projects {
-                grid-template-columns: 1fr;
+            .badges-container {
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
-    
-    <!-- Sekcja Hero -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Cześć, Jestem [Imię]</h1>
-            <p>Full Stack Developer & Cyber Security Specialist</p>
-            <button>Zobacz Portfolio</button>
+    <div class="container">
+        <div class="profile-banner">
+            <div class="profile-avatar">
+                <img src="avatar.jpg" alt="Profilowe">
+                <div class="online-status"></div>
+            </div>
         </div>
-    </section>
 
-    <!-- Projekty -->
-    <section id="projects" class="projects">
-        <div class="project-card reveal">
-            <div class="project-image">
-                <img src="project1.jpg" alt="Projekt 1">
-            </div>
-            <div class="project-info">
-                <h3>Zaawansowany System Bezpieczeństwa</h3>
-                <p>Python • Django • Cyber Security</p>
-                <div class="project-links">
-                    <a href="#"><i class="fab fa-github"></i> Repozytorium</a>
+        <div class="profile-info">
+            <h1 class="username">DevMaster<span class="discriminator">#1234</span></h1>
+            
+            <div class="badges-container">
+                <div class="role-badge javascript">
+                    <i class="fab fa-js"></i>
+                    JavaScript
+                </div>
+                <div class="role-badge python">
+                    <i class="fab fa-python"></i>
+                    Python
+                </div>
+                <div class="role-badge react">
+                    <i class="fab fa-react"></i>
+                    React
+                </div>
+                <div class="role-badge node">
+                    <i class="fab fa-node"></i>
+                    Node.js
                 </div>
             </div>
-        </div>
-        <!-- Dodaj więcej projektów -->
-    </section>
 
-    <!-- Umiejętności -->
-    <section id="skills" class="skills">
-        <div class="skills-grid">
-            <div class="skill-item reveal">
-                <i class="fab fa-python"></i>
-                <div>
-                    <h4>Python</h4>
-                    <p>Zaawansowany • 3 lata doświadczenia</p>
+            <div class="bio-section">
+                <h3>O MNIE</h3>
+                <p>🔭 Aktualnie pracuję nad systemem AI<br>
+                🌱 Uczę się cybersecurity<br>
+                💬 Zapytaj mnie o frameworki JS</p>
+            </div>
+
+            <div class="projects-section">
+                <h3>AKTYWNE PROJEKTY</h3>
+                <div class="project-card">
+                    <div class="project-title">Discord Bot</div>
+                    <p>Zaawansowany bot zarządzający serwerem z AI</p>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">E-commerce Platform</div>
+                    <p>Pełny system sprzedażowy z React i Node.js</p>
                 </div>
             </div>
-            <div class="skill-item reveal">
-                <i class="fas fa-shield-alt"></i>
-                <div>
-                    <h4>Cyber Security</h4>
-                    <p>Pentesting • OWASP • SIEM</p>
-                </div>
-            </div>
-            <!-- Dodaj więcej umiejętności -->
+
+            <button class="discord-button">
+                <i class="fab fa-discord"></i> Skontaktuj się ze mną
+            </button>
         </div>
-    </section>
+    </div>
 </body>
 </html>

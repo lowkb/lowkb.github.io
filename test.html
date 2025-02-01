@@ -3,60 +3,344 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio programisty backend - low_kb</title>
-    <meta name="description" content="low_kb to doświadczony backend developer specjalizujący się w technologiach takich jak JavaScript, TypeScript, Java oraz C#. Sprawdź moje projekty!">
-    <link rel="stylesheet" href="styles.css">
-    <!-- Dodaj linki do ikon dla lepszej prezentacji w wynikach wyszukiwania -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Dodaj Open Graph tags dla lepszego udostępniania w mediach społecznościowych -->
-    <meta property="og:title" content="Portfolio programisty backend - low_kb">
-    <meta property="og:description" content="low_kb to doświadczony backend developer specjalizujący się w technologiach takich jak JavaScript, TypeScript, Java oraz C#. Sprawdź moje projekty!">
-    <meta property="og:image" content="thumbnail.png">
-    <meta property="og:url" content="https://lowkb.github.io/">
-    <meta property="og:type" content="website">
+    <title>Portfolio | [Twoje Imię]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2ecc71;
+            --secondary-color: #27ae60;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            transition: var(--transition);
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: var(--dark-color);
+            color: var(--light-color);
+        }
+
+        /* Nawigacja */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        .dark-mode .navbar {
+            background: rgba(44, 62, 80, 0.95);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .dark-mode .nav-links a {
+            color: var(--light-color);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Sekcja Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Projekty */
+        .projects {
+            padding: 5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: var(--transition);
+        }
+
+        .dark-mode .project-card {
+            background: #34495e;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        /* Umiejętności */
+        .skills {
+            padding: 5rem 2rem;
+            background: var(--light-color);
+        }
+
+        .dark-mode .skills {
+            background: #34495e;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skill-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 10px;
+            transition: var(--transition);
+        }
+
+        .dark-mode .skill-item {
+            background: #2c3e50;
+        }
+
+        .skill-item i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        /* Kontakt */
+        .contact {
+            padding: 5rem 2rem;
+            background: var(--light-color);
+        }
+
+        .dark-mode .contact {
+            background: #34495e;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        button:hover {
+            background: var(--secondary-color);
+        }
+
+        /* Animacje */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 1s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsywność */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Portfolio programisty backend - <span id="nickname">low_kb</span></h1>
-        <!-- Dodaj nawigację dla lepszej struktury strony -->
-        <nav>
-            <ul>
-                <li><a href="#o-mnie">O mnie</a></li>
-                <li><a href="#projekty">Projekty</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="o-mnie">
-            <h2>O mnie</h2>
-            <p>Jestem profesjonalistą z bogatym doświadczeniem w tworzeniu aplikacji backendowych i systemów zarządzania danymi. Pracuję z językami <strong>JavaScript</strong>, <strong>TypeScript</strong>, <strong>Java</strong> i <strong>C#</strong>, dostarczając skalowalne i wydajne rozwiązania oparte na nowoczesnych technologiach.</p>
-            <p>Nick "<span id="nickname">low_kb</span>" symbolizuje moje podejście do kodowania - skuteczność, minimalizm i wysoką jakość w każdym projekcie. Skupiam się na optymalizacji oraz wydajności kodu, tak aby każdy bit miał znaczenie.</p>
-        </section>
-        <section id="projekty">
-            <h2>Projekty</h2>
-            <p>Moje projekty obejmują szeroki zakres aplikacji backendowych i systemów API, od prostych rozwiązań serwerowych po złożone architektury rozproszone. W projektach stosuję zasady OOP i wzorce projektowe, aby zapewnić elastyczność i skalowalność.</p>
-            <!-- Dodaj listę projektów z linkami -->
-            <ul>
-                <li><a href="https://github.com/lowkb/projekt1">Projekt 1 - Opis projektu</a></li>
-                <li><a href="https://github.com/lowkb/projekt2">Projekt 2 - Opis projektu</a></li>
-                <li><a href="https://github.com/lowkb/projekt3">Projekt 3 - Opis projektu</a></li>
-            </ul>
-        </section>
-        <section id="kontakt">
-            <h2>Kontakt</h2>
-            <p>Chcesz porozmawiać o potencjalnym projekcie lub współpracy? Skontaktuj się ze mną:</p>
-            <ul>
-                <li>Email: <a href="mailto:lowkb.dev@gmail.com">lowkb.dev@gmail.com</a></li>
-                <li>Discord: <a href="https://discordapp.com/users/low_kb">low_kb</a></li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 low_kb. Wszelkie prawa zastrzeżone.</p>
-    </footer>
-    <!-- Dodaj skrypt do analityki, jeśli jest potrzebny -->
-    <!-- <script src="analytics.js"></script> -->
+    <!-- Nawigacja -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#home">Strona główna</a></li>
+            <li><a href="#projects">Projekty</a></li>
+            <li><a href="#skills">Umiejętności</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+            <li><button id="theme-toggle"><i class="fas fa-moon"></i></button></li>
+        </ul>
+    </nav>
+
+    <!-- Sekcja Hero -->
+    <section id="home" class="hero">
+        <div class="hero-content reveal">
+            <h1>Cześć, Jestem [Imię]</h1>
+            <p>Front-End Developer & UI/UX Designer</p>
+            <button>Pobierz CV</button>
+        </div>
+    </section>
+
+    <!-- Projekty -->
+    <section id="projects" class="projects">
+        <div class="project-card reveal">
+            <div class="project-image">
+                <img src="project1.jpg" alt="Projekt 1">
+            </div>
+            <div class="project-info">
+                <h3>Nazwa Projektu</h3>
+                <p>Opis projektu i wykorzystane technologie</p>
+                <div class="project-links">
+                    <a href="#"><i class="fab fa-github"></i> Kod</a>
+                    <a href="#"><i class="fas fa-external-link-alt"></i> Demo</a>
+                </div>
+            </div>
+        </div>
+        <!-- Dodaj więcej projektów -->
+    </section>
+
+    <!-- Umiejętności -->
+    <section id="skills" class="skills">
+        <div class="skills-grid">
+            <div class="skill-item reveal">
+                <i class="fab fa-react"></i>
+                <h4>React</h4>
+                <p>Doświadczenie: 2 lata</p>
+            </div>
+            <!-- Dodaj więcej umiejętności -->
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="contact">
+        <div class="contact-form reveal">
+            <form>
+                <div class="form-group">
+                    <input type="text" placeholder="Imię" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea rows="5" placeholder="Wiadomość" required></textarea>
+                </div>
+                <button type="submit">Wyślij</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Obsługa dark mode
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            themeToggle.innerHTML = body.classList.contains('dark-mode') ? 
+                '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Animacje przy przewijaniu
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Inicjalizacja
+
+        // Gładkie przewijanie
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

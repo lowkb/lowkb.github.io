@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strona z trzema sekcjami</title>
+  <title>Strona z trzema sekcjami - mobilna i desktop</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="overflow-hidden">
@@ -21,25 +21,52 @@
     </div>
   </div>
   <script>
-    (function(){
+    (function() {
       let currentSection = 0;
       const maxSection = 2; // indeksy: 0, 1, 2
       let isAnimating = false;
+      let touchStartY = 0;
       const content = document.getElementById('content');
       const container = document.getElementById('scroll-container');
 
-      container.addEventListener('wheel', function(e) {
+      const performTransition = (direction) => {
         if (isAnimating) return;
-        if (e.deltaY > 0 && currentSection < maxSection) {
+        if (direction === 'down' && currentSection < maxSection) {
           isAnimating = true;
           currentSection++;
           content.style.transform = `translateY(-${currentSection * 100}vh)`;
           setTimeout(() => { isAnimating = false; }, 800);
-        } else if (e.deltaY < 0 && currentSection > 0) {
+        } else if (direction === 'up' && currentSection > 0) {
           isAnimating = true;
           currentSection--;
           content.style.transform = `translateY(-${currentSection * 100}vh)`;
           setTimeout(() => { isAnimating = false; }, 800);
+        }
+      };
+
+      // Obsługa scrolla (desktop)
+      container.addEventListener('wheel', function(e) {
+        if (e.deltaY > 0) {
+          performTransition('down');
+        } else if (e.deltaY < 0) {
+          performTransition('up');
+        }
+      });
+
+      // Obsługa dotyku (mobile)
+      container.addEventListener('touchstart', function(e) {
+        touchStartY = e.changedTouches[0].screenY;
+      });
+
+      container.addEventListener('touchend', function(e) {
+        const touchEndY = e.changedTouches[0].screenY;
+        const diff = touchStartY - touchEndY;
+        if (Math.abs(diff) > 50) { // minimalny próg aby wykryć gest
+          if (diff > 0) {
+            performTransition('down');
+          } else {
+            performTransition('up');
+          }
         }
       });
     })();

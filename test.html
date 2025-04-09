@@ -1,147 +1,48 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>low_kb - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        body {
-            background: linear-gradient(45deg, #0a0a2e, #1a1a4a);
-            color: #ffffff;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 2rem;
-            margin: 2rem 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .hero {
-            text-align: center;
-            padding: 8rem 0 4rem;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 0.7rem;
-            margin-top: 2rem;
-        }
-
-        .project-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 1.5rem;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-
-        .project-card:hover {
-            background: rgba(255, 255, 255, 0.12);
-            transform: translateY(-5px);
-        }
-
-        .tech-badge {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            margin: 0.3rem;
-            background: rgba(108, 99, 255, 0.2);
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        .contact-section {
-            text-align: center;
-            padding: 4rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strona z trzema sekcjami</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    <div class="container">
-        <section class="hero">
-            <h1>low_kb</h1>
-            <p>Backend Developer &amp; Software Architect</p>
-        </section>
-
-        <section id="about" class="card">
-            <h2>O mnie</h2>
-            <p>Jestem profesjonalistą z bogatym doświadczeniem w tworzeniu aplikacji backendowych i systemów zarządzania danymi. Specjalizuję się w technologiach:</p>
-            <div style="margin-top: 1rem;">
-                <span class="tech-badge">JavaScript</span>
-                <span class="tech-badge">TypeScript</span>
-                <span class="tech-badge">Java</span>
-                <span class="tech-badge">C#</span>
-            </div>
-        </section>
-
-        <section id="projects" class="glass-card">
-            <h2>Projekty</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <h3>System API Gateway</h3>
-                    <p>Wysokowydajny system zarządzania ruchem API</p>
-                    <div style="margin-top: 1rem;">
-                        <span class="tech-badge">Node.js</span>
-                        <span class="tech-badge">TypeScript</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Platforma E-commerce</h3>
-                    <p>Skalowalna platforma transakcyjna</p>
-                    <div style="margin-top: 1rem;">
-                        <span class="tech-badge">Java</span>
-                        <span class="tech-badge">Spring Boot</span>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>System Analytics</h3>
-                    <p>System analizy danych w czasie rzeczywistym</p>
-                    <div style="margin-top: 1rem;">
-                        <span class="tech-badge">C#</span>
-                        <span class="tech-badge">.NET Core</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section">
-            <div class="glass-card">
-                <h2>Kontakt</h2>
-                <p style="margin: 1rem 0;">Email: lowkb.dev@gmail.com</p>
-                <p>Discord: low_kb</p>
-            </div>
-        </section>
+<body class="overflow-hidden">
+  <div id="scroll-container" class="h-screen" style="touch-action: none;">
+    <div id="content" class="h-[300vh] transition-transform duration-700 ease-in-out">
+      <section class="h-screen bg-blue-600 flex items-center justify-center text-white text-3xl">
+        Main
+      </section>
+      <section class="h-screen bg-green-600 flex items-center justify-center text-white text-3xl">
+        Info
+      </section>
+      <section class="h-screen bg-red-600 flex items-center justify-center text-white text-3xl">
+        Stats
+      </section>
     </div>
+  </div>
+  <script>
+    (function(){
+      let currentSection = 0;
+      const maxSection = 2; // indeksy: 0, 1, 2
+      let isAnimating = false;
+      const content = document.getElementById('content');
+      const container = document.getElementById('scroll-container');
+
+      container.addEventListener('wheel', function(e) {
+        if (isAnimating) return;
+        if (e.deltaY > 0 && currentSection < maxSection) {
+          isAnimating = true;
+          currentSection++;
+          content.style.transform = `translateY(-${currentSection * 100}vh)`;
+          setTimeout(() => { isAnimating = false; }, 800);
+        } else if (e.deltaY < 0 && currentSection > 0) {
+          isAnimating = true;
+          currentSection--;
+          content.style.transform = `translateY(-${currentSection * 100}vh)`;
+          setTimeout(() => { isAnimating = false; }, 800);
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

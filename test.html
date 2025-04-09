@@ -3,48 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strona z trzema sekcjami i przyciskiem</title>
+  <title>Strona z trzema sekcjami i suwakiem</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* Zapewniamy, że element content zostanie przetransformowany płynnie */
-    #content {
-      transition: transform 0.7s ease-in-out;
+    /* Styl dla pionowego suwaka – obracamy element input */
+    .vertical-slider {
+      -webkit-appearance: none;
+      width: 200px; /* szerokość po obróceniu */
+      transform: rotate(-90deg);
+    }
+    .vertical-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px;
+      height: 16px;
+      background: #4A5568;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+    }
+    .vertical-slider::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      background: #4A5568;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
     }
   </style>
 </head>
-<body class="overflow-hidden">
-  <div id="scroll-container" class="h-screen relative">
-    <div id="content" class="h-[300vh]">
-      <section class="relative h-screen bg-blue-600 flex items-center justify-center text-white text-3xl">
+<body class="overflow-hidden relative">
+  <div id="scroll-container" class="h-screen">
+    <div id="content" class="h-[300vh] transition-transform duration-700 ease-in-out">
+      <section class="h-screen bg-blue-600 flex items-center justify-center text-white text-3xl">
         Main
-        <button onclick="goNext()" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-blue-600 py-2 px-4 rounded">
-          Następna
-        </button>
       </section>
-      <section class="relative h-screen bg-green-600 flex items-center justify-center text-white text-3xl">
+      <section class="h-screen bg-green-600 flex items-center justify-center text-white text-3xl">
         Info
-        <button onclick="goNext()" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-green-600 py-2 px-4 rounded">
-          Następna
-        </button>
       </section>
-      <section class="relative h-screen bg-red-600 flex items-center justify-center text-white text-3xl">
+      <section class="h-screen bg-red-600 flex items-center justify-center text-white text-3xl">
         Stats
-        <!-- W ostatniej sekcji przycisk nie jest potrzebny -->
       </section>
     </div>
+  </div>
+  <!-- Suwak umieszczony na dole ekranu, wycentrowany -->
+  <div class="fixed bottom-10 left-1/2 transform -translate-x-1/2">
+    <input id="slider" type="range" min="0" max="2" step="1" value="0" class="vertical-slider">
   </div>
   <script>
     (function() {
       let currentSection = 0;
-      const maxSection = 2; // Indeksy: 0, 1, 2
       const content = document.getElementById('content');
+      const slider = document.getElementById('slider');
 
-      window.goNext = function() {
-        if (currentSection < maxSection) {
-          currentSection++;
-          content.style.transform = `translateY(-${currentSection * 100}vh)`;
-        }
-      };
+      slider.addEventListener('input', function() {
+        currentSection = parseInt(this.value, 10);
+        content.style.transform = `translateY(-${currentSection * 100}vh)`;
+      });
     })();
   </script>
 </body>

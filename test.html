@@ -3,72 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Strona z trzema sekcjami - mobilna i desktop</title>
+  <title>Strona z trzema sekcjami i przyciskiem</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Zapewniamy, że element content zostanie przetransformowany płynnie */
+    #content {
+      transition: transform 0.7s ease-in-out;
+    }
+  </style>
 </head>
 <body class="overflow-hidden">
-  <div id="scroll-container" class="h-screen" style="touch-action: none;">
-    <div id="content" class="h-[300vh] transition-transform duration-700 ease-in-out">
-      <section class="h-screen bg-blue-600 flex items-center justify-center text-white text-3xl">
+  <div id="scroll-container" class="h-screen relative">
+    <div id="content" class="h-[300vh]">
+      <section class="relative h-screen bg-blue-600 flex items-center justify-center text-white text-3xl">
         Main
+        <button onclick="goNext()" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-blue-600 py-2 px-4 rounded">
+          Następna
+        </button>
       </section>
-      <section class="h-screen bg-green-600 flex items-center justify-center text-white text-3xl">
+      <section class="relative h-screen bg-green-600 flex items-center justify-center text-white text-3xl">
         Info
+        <button onclick="goNext()" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 bg-white text-green-600 py-2 px-4 rounded">
+          Następna
+        </button>
       </section>
-      <section class="h-screen bg-red-600 flex items-center justify-center text-white text-3xl">
+      <section class="relative h-screen bg-red-600 flex items-center justify-center text-white text-3xl">
         Stats
+        <!-- W ostatniej sekcji przycisk nie jest potrzebny -->
       </section>
     </div>
   </div>
   <script>
     (function() {
       let currentSection = 0;
-      const maxSection = 2; // indeksy: 0, 1, 2
-      let isAnimating = false;
-      let touchStartY = 0;
+      const maxSection = 2; // Indeksy: 0, 1, 2
       const content = document.getElementById('content');
-      const container = document.getElementById('scroll-container');
 
-      const performTransition = (direction) => {
-        if (isAnimating) return;
-        if (direction === 'down' && currentSection < maxSection) {
-          isAnimating = true;
+      window.goNext = function() {
+        if (currentSection < maxSection) {
           currentSection++;
           content.style.transform = `translateY(-${currentSection * 100}vh)`;
-          setTimeout(() => { isAnimating = false; }, 800);
-        } else if (direction === 'up' && currentSection > 0) {
-          isAnimating = true;
-          currentSection--;
-          content.style.transform = `translateY(-${currentSection * 100}vh)`;
-          setTimeout(() => { isAnimating = false; }, 800);
         }
       };
-
-      // Obsługa scrolla (desktop)
-      container.addEventListener('wheel', function(e) {
-        if (e.deltaY > 0) {
-          performTransition('down');
-        } else if (e.deltaY < 0) {
-          performTransition('up');
-        }
-      });
-
-      // Obsługa dotyku (mobile)
-      container.addEventListener('touchstart', function(e) {
-        touchStartY = e.changedTouches[0].screenY;
-      });
-
-      container.addEventListener('touchend', function(e) {
-        const touchEndY = e.changedTouches[0].screenY;
-        const diff = touchStartY - touchEndY;
-        if (Math.abs(diff) > 50) { // minimalny próg aby wykryć gest
-          if (diff > 0) {
-            performTransition('down');
-          } else {
-            performTransition('up');
-          }
-        }
-      });
     })();
   </script>
 </body>

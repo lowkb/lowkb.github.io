@@ -1,0 +1,221 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;600&display=swap');
+
+:root {
+  --background-color: #1a1a1a;
+  --text-color: #e0e0e0;
+  --text-light: #cccccc;
+  --accent-color: #a189b8; /* szaro-fiolet */
+  --button-bg: #2a2a2a;
+  --button-hover-bg: #3a3a3a;
+  --button-border: #444;
+  --card-bg: #2b2b2b;
+  --input-bg: #222;
+  --input-border: #444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'IBM Plex Mono', Menlo, Monaco, Consolas, monospace;
+  font-weight: 300;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Główny kontener */
+.main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Nagłówek i menu */
+header {
+  border-bottom: 1px solid #333;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem 0;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+nav li + li {
+  margin-left: 2rem;
+}
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Sekcja hero */
+.hero {
+  text-align: center;
+  padding: 4rem 0;
+}
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.hero p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  color: #bbb;
+}
+
+/* Styl przycisków */
+.btn {
+  display: inline-block;
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: 2px solid var(--button-border);
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+.btn:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--accent-color);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+/* Sekcje z animacją fade-in */
+.section {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-out forwards;
+  padding: 4rem 0;
+}
+.section:nth-of-type(1) { animation-delay: 0.2s; }
+.section:nth-of-type(2) { animation-delay: 0.4s; }
+.section:nth-of-type(3) { animation-delay: 0.6s; }
+.section:nth-of-type(4) { animation-delay: 0.8s; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Nagłówki */
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--text-color);
+  position: relative;
+  margin-bottom: 1rem;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  margin-top: 8px;
+}
+
+/* Paragrafy */
+p {
+  margin-bottom: 1rem;
+  color: var(--text-light);
+}
+
+/* Karty w sekcji Projekty */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  background-color: var(--card-bg);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem;
+  flex: 1 1 280px;
+  max-width: 320px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+.card:hover {
+  transform: translateY(-5px);
+}
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: var(--accent-color);
+}
+.card p {
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Formularz kontaktowy */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input, textarea {
+  width: 100%;
+  max-width: 600px;
+  background-color: var(--input-bg);
+  color: var(--text-light);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  font-family: inherit;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+textarea {
+  resize: vertical;
+}
+::placeholder {
+  color: #777;
+}
+
+/* Stopka */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  padding: 2rem 0;
+  border-top: 1px solid #333;
+}
+
+/* Responsywność */
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+  nav li + li {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+}

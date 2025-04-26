@@ -3,55 +3,63 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Portfolio programisty backend - low_kb</title>
+  <title>low_kb - Backend Developer</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="#hero">Start</a></li>
-      <li><a href="#techstack">Techstack</a></li>
-      <li><a href="#projects">Projekty</a></li>
-    </ul>
-  </nav>
-  <section id="hero">
-    <h1>Portfolio programisty backend - low_kb</h1>
-    <p>Doświadczony programista backend specjalizujący się w JavaScript (TypeScript), Java i C#.</p>
-    <a href="#techstack" class="btn">Poznaj Techstack</a>
-  </section>
-  <section id="techstack">
-    <h2>Techstack</h2>
-    <div class="tech-grid">
-      <div class="tech-card">JavaScript (TypeScript)</div>
-      <div class="tech-card">Node.js</div>
-      <div class="tech-card">NestJS</div>
-      <div class="tech-card">PostgreSQL</div>
-      <div class="tech-card">Redis</div>
-      <div class="tech-card">Prisma</div>
-      <div class="tech-card">WebSocket</div>
-      <div class="tech-card">WebRTC</div>
-      <div class="tech-card">Socket.io</div>
-      <div class="tech-card">AES+RSA</div>
-      <div class="tech-card">JWT</div>
+  <header class="navbar">
+    <div class="container">
+      <nav>
+        <a href="#start">Start</a>
+        <a href="#techstack">Techstack</a>
+        <a href="#projects">Projekty</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="start" class="hero">
+    <div class="container">
+      <h1>low_kb</h1>
+      <p>Programista backend specjalizujący się w JavaScript (TypeScript), Java i C#.</p>
+      <a href="#techstack" class="btn">Sprawdź mój Techstack</a>
     </div>
   </section>
-  <section id="projects">
-    <h2>Projekty</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>System Rezerwacji Biletów</h3>
-        <p>Platforma do zarządzania rezerwacjami biletów lotniczych z użyciem Node.js i PostgreSQL.</p>
-        <a href="#" class="btn">Zobacz projekt</a>
+
+  <section id="techstack" class="section">
+    <div class="container">
+      <h2>Techstack</h2>
+      <div class="grid">
+        <div class="card">JavaScript (TypeScript)</div>
+        <div class="card">Node.js</div>
+        <div class="card">NestJS</div>
+        <div class="card">PostgreSQL</div>
+        <div class="card">Redis</div>
+        <div class="card">Prisma</div>
+        <div class="card">WebSocket</div>
+        <div class="card">WebRTC</div>
+        <div class="card">Socket.io</div>
+        <div class="card">AES + RSA</div>
+        <div class="card">JWT</div>
       </div>
-      <div class="project-card">
-        <h3>Aplikacja Chat</h3>
-        <p>Wielosieciowa aplikacja czatu czasu rzeczywistego wykorzystująca WebSocket oraz Redis do przechowywania danych.</p>
-        <a href="#" class="btn">Zobacz projekt</a>
-      </div>
-      <div class="project-card">
-        <h3>Platforma E-commerce</h3>
-        <p>Aplikacja sklepu internetowego oparta na NestJS i Prisma, z płatnościami szyfrowanymi za pomocą AES/RSA.</p>
-        <a href="#" class="btn">Zobacz projekt</a>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projekty</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>System Rezerwacji</h3>
+          <p>Aplikacja do rezerwacji biletów lotniczych oparta o Node.js i PostgreSQL.</p>
+        </div>
+        <div class="card">
+          <h3>Aplikacja Chat</h3>
+          <p>System czatu w czasie rzeczywistym z wykorzystaniem WebSocket i Redis.</p>
+        </div>
+        <div class="card">
+          <h3>Platforma E-commerce</h3>
+          <p>Sklep internetowy na NestJS + Prisma, szyfrowany AES/RSA.</p>
+        </div>
       </div>
     </div>
   </section>

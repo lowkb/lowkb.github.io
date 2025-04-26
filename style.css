@@ -1,0 +1,217 @@
+/* Reset i style globalne */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1e1e1e;
+  color: #eee;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+a {
+  color: #a189b8;
+  text-decoration: none;
+}
+
+/* Nawigacja */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #2b2b2b;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  border-bottom: 2px solid #444;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+nav li {
+  margin: 0;
+}
+nav a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid #a189b8;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+nav a:hover {
+  background-color: #a189b8;
+  color: #1e1e1e;
+}
+
+/* Kotwice sekcji (aby sekcje nie były schowane pod nawigacją) */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Sekcja Hero (Strona Główna) */
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  min-height: 100vh;
+}
+#hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #a189b8;
+}
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #ccc;
+}
+#hero .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #a189b8;
+  color: #1e1e1e;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+#hero .btn:hover {
+  opacity: 0.8;
+}
+
+/* Sekcja Techstack */
+#techstack {
+  padding: 4rem 2rem;
+}
+#techstack h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #a189b8;
+}
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.tech-card {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  text-align: center;
+  border: 1px solid #444;
+  border-radius: 6px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: default;
+  font-weight: bold;
+}
+.tech-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border-color: #5a3b8a;
+}
+
+/* Sekcja Projekty */
+#projects {
+  padding: 4rem 2rem;
+  background-color: #1b1b1b;
+}
+#projects h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #a189b8;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.project-card {
+  background-color: #2a2a2a;
+  padding: 1.5rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  border-color: #5a3b8a;
+}
+.project-card h3 {
+  margin-bottom: 1rem;
+  color: #a189b8;
+  font-size: 1.5rem;
+}
+.project-card p {
+  flex-grow: 1;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+.project-card .btn {
+  align-self: flex-start;
+  padding: 0.5rem 1rem;
+  background-color: #a189b8;
+  color: #1e1e1e;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.project-card .btn:hover {
+  background-color: #7d6995;
+}
+
+/* Animacje (fade-in dla sekcji) */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: none; }
+}
+/* Zastosowanie fade-in */
+#hero, #techstack, #projects {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+#techstack {
+  animation-delay: 0.2s;
+}
+#projects {
+  animation-delay: 0.4s;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+  }
+  #hero {
+    padding-top: 6rem;
+  }
+  .tech-grid, .projects-grid {
+    grid-template-columns: 1fr;
+  }
+  #hero h1 {
+    font-size: 2rem;
+  }
+  #hero p {
+    font-size: 1rem;
+  }
+}

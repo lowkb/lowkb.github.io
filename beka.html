@@ -1,67 +1,63 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>low_kb - Backend Developer</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>low_kb | Backend Developer</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <nav>
-        <a href="#start">Start</a>
-        <a href="#techstack">Techstack</a>
-        <a href="#projects">Projekty</a>
-      </nav>
-    </div>
-  </header>
-
-  <section id="start" class="hero">
-    <div class="container">
-      <h1>low_kb</h1>
-      <p>Programista backend specjalizujący się w JavaScript (TypeScript), Java i C#.</p>
-      <a href="#techstack" class="btn">Sprawdź mój Techstack</a>
-    </div>
-  </section>
-
-  <section id="techstack" class="section">
-    <div class="container">
-      <h2>Techstack</h2>
-      <div class="grid">
-        <div class="card">JavaScript (TypeScript)</div>
-        <div class="card">Node.js</div>
-        <div class="card">NestJS</div>
-        <div class="card">PostgreSQL</div>
-        <div class="card">Redis</div>
-        <div class="card">Prisma</div>
-        <div class="card">WebSocket</div>
-        <div class="card">WebRTC</div>
-        <div class="card">Socket.io</div>
-        <div class="card">AES + RSA</div>
-        <div class="card">JWT</div>
-      </div>
-    </div>
-  </section>
-
-  <section id="projects" class="section">
-    <div class="container">
-      <h2>Projekty</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>System Rezerwacji</h3>
-          <p>Aplikacja do rezerwacji biletów lotniczych oparta o Node.js i PostgreSQL.</p>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">low_kb</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#about">O mnie</a></li>
+                    <li><a href="#projects">Projekty</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="card">
-          <h3>Aplikacja Chat</h3>
-          <p>System czatu w czasie rzeczywistym z wykorzystaniem WebSocket i Redis.</p>
+    </header>
+
+    <main class="main">
+        <section id="about" class="section">
+            <div class="container">
+                <h2>O mnie</h2>
+                <p>
+                    Jestem profesjonalnym backend developerem z doświadczeniem w JavaScript, TypeScript, Java i C#.
+                    Dostarczam skalowalne i wydajne rozwiązania, dbając o wysoką jakość kodu i minimalizm. 
+                    Nick "low_kb" odzwierciedla moje podejście – skuteczność, optymalizacja i znaczenie każdego bitu.
+                </p>
+            </div>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projekty</h2>
+                <p>
+                    Tworzę aplikacje backendowe i systemy API – od prostych serwerów po złożone architektury rozproszone. 
+                    Stosuję zasady OOP i wzorce projektowe, aby zapewnić elastyczność i skalowalność.
+                </p>
+                <p>
+                    Zapoznaj się z moimi projektami w JavaScript, TypeScript, Java oraz C#.
+                </p>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Kontakt</h2>
+                <p>Email: <a href="mailto:lowkb.dev@gmail.com">lowkb.dev@gmail.com</a></p>
+                <p>Discord: <span class="discord">low_kb</span></p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 low_kb. Wszystkie prawa zastrzeżone.</p>
         </div>
-        <div class="card">
-          <h3>Platforma E-commerce</h3>
-          <p>Sklep internetowy na NestJS + Prisma, szyfrowany AES/RSA.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 </body>
 </html>

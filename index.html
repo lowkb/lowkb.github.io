@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio – low_kb</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Courier New', monospace;
+      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+      color: #00ffff;
+      background-size: 400% 400%;
+      animation: bgMove 15s ease infinite;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 1rem;
+      padding: 2rem;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #ff00ff;
+      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      color: #00ff99;
+      text-shadow: 0 0 5px #00ff99;
+      margin-top: 1.5rem;
+    }
+
+    p, li {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #e0ffff;
+      margin-top: 0.5rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    .footer {
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    a {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+
+    a:hover {
+      color: #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass-card">
+    <h1>low_kb – Portfolio</h1>
+    
+    <h2>👨‍💻 Kim jestem?</h2>
+    <p>Jestem programistą z doświadczeniem w JavaScript, TypeScript, Java oraz C#. Tworzę czysty, zoptymalizowany kod zgodny z zasadami DRY, SOLID oraz OOP. Specjalizuję się w komunikacji klient-serwer, WebSocketach oraz silnikach gier takich jak Minecraft (1.8.9+).</p>
+    
+    <h2>🔧 Technologie</h2>
+    <ul>
+      <li>JavaScript / TypeScript</li>
+      <li>Java (MCP, mixiny, Netty, WebSocket)</li>
+      <li>C# (.NET Core, Unity)</li>
+      <li>HTML5 + CSS3</li>
+    </ul>
+
+    <h2>📂 Projekty</h2>
+    <ul>
+      <li><strong>WebSocketAPI:</strong> Własny system komunikacji WebSocket z obsługą autoryzacji i modularnych pakietów</li>
+      <li><strong>Minecraft Client Mods:</strong> Klient z obsługą kosmetyków, emotek i peleryn z użyciem GeckoLib i mixinów</li>
+      <li><strong>Serwery PvP:</strong> Rozdzielony system lobby + PvP z użyciem Minestom</li>
+    </ul>
+
+    <h2>📬 Kontakt</h2>
+    <p>Email: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/lowkb" target="_blank">github.com/lowkb</a></p>
+
+    <div class="footer">
+      © 2025 low_kb. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>

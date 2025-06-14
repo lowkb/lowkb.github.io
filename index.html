@@ -1,10 +1,17 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Portfolio – low_kb</title>
   <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --accent: #00bcd4;
+      --text: #ffffff;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -12,11 +19,9 @@
     }
 
     body {
-      font-family: 'Courier New', monospace;
-      background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
-      color: #00ffff;
-      background-size: 400% 400%;
-      animation: bgMove 15s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1e1e1e, #111);
+      color: var(--text);
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -24,94 +29,100 @@
       padding: 2rem;
     }
 
-    @keyframes bgMove {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .glass-card {
-      background: rgba(255, 255, 255, 0.1);
-      border-radius: 1rem;
-      padding: 2rem;
+    .container {
+      max-width: 900px;
       width: 100%;
-      max-width: 800px;
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 2rem;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      border-radius: 1.5rem;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
     }
 
     h1 {
-      font-size: 2.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-      color: #ff00ff;
-      text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff;
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
     }
 
     h2 {
-      font-size: 1.5rem;
-      color: #00ff99;
-      text-shadow: 0 0 5px #00ff99;
-      margin-top: 1.5rem;
+      font-size: 1.4rem;
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
     }
 
     p, li {
       font-size: 1rem;
       line-height: 1.6;
-      color: #e0ffff;
-      margin-top: 0.5rem;
     }
 
     ul {
-      margin-left: 1.5rem;
-    }
-
-    .footer {
-      margin-top: 2rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #888;
+      padding-left: 1.2rem;
     }
 
     a {
-      color: #00ffff;
-      text-decoration: underline;
+      color: var(--accent);
+      text-decoration: none;
     }
 
     a:hover {
-      color: #ff00ff;
+      text-decoration: underline;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 1.2rem;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      h2 {
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="glass-card">
+  <div class="container">
     <h1>low_kb – Portfolio</h1>
-    
-    <h2>👨‍💻 Kim jestem?</h2>
-    <p>Jestem programistą z doświadczeniem w JavaScript, TypeScript, Java oraz C#. Tworzę czysty, zoptymalizowany kod zgodny z zasadami DRY, SOLID oraz OOP. Specjalizuję się w komunikacji klient-serwer, WebSocketach oraz silnikach gier takich jak Minecraft (1.8.9+).</p>
-    
-    <h2>🔧 Technologie</h2>
+
+    <h2>O mnie</h2>
+    <p>Jestem programistą specjalizującym się w JavaScript, TypeScript, Java oraz C#. Tworzę szybkie, modułowe rozwiązania zgodne z zasadami DRY, SOLID i OOP. Skupiam się na wydajności, testowalności i gotowości do skalowania projektów.</p>
+
+    <h2>Umiejętności</h2>
     <ul>
-      <li>JavaScript / TypeScript</li>
-      <li>Java (MCP, mixiny, Netty, WebSocket)</li>
+      <li>JavaScript / TypeScript (Node.js, Fastify, NestJS)</li>
+      <li>Java (Netty, mixiny, klienty Minecraft)</li>
       <li>C# (.NET Core, Unity)</li>
-      <li>HTML5 + CSS3</li>
+      <li>Bazy danych: MongoDB, PostgreSQL, Prisma</li>
+      <li>Frontend: React, Preact, Vite</li>
     </ul>
 
-    <h2>📂 Projekty</h2>
+    <h2>Projekty</h2>
     <ul>
-      <li><strong>WebSocketAPI:</strong> Własny system komunikacji WebSocket z obsługą autoryzacji i modularnych pakietów</li>
-      <li><strong>Minecraft Client Mods:</strong> Klient z obsługą kosmetyków, emotek i peleryn z użyciem GeckoLib i mixinów</li>
-      <li><strong>Serwery PvP:</strong> Rozdzielony system lobby + PvP z użyciem Minestom</li>
+      <li>System WebSocketAPI z modularną obsługą pakietów i autoryzacją</li>
+      <li>Moduł kosmetyków i emotek w kliencie Minecraft (1.8.9+)</li>
+      <li>Backend PvP z lobby, Minestom i zewnętrzną synchronizacją</li>
     </ul>
 
-    <h2>📬 Kontakt</h2>
+    <h2>Kontakt</h2>
     <p>Email: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
     <p>GitHub: <a href="https://github.com/lowkb" target="_blank">github.com/lowkb</a></p>
 
     <div class="footer">
-      © 2025 low_kb. All rights reserved.
+      © 2025 low_kb. Wszelkie prawa zastrzeżone.
     </div>
   </div>
 </body>

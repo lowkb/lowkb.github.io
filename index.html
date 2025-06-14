@@ -1,129 +1,151 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Portfolio – low_kb</title>
+  <title>low_kb – Portfolio Card</title>
   <style>
     :root {
-      --glass-bg: rgba(255, 255, 255, 0.1);
-      --glass-border: rgba(255, 255, 255, 0.2);
+      --glass-bg: rgba(255, 255, 255, 0.06);
+      --glass-border: rgba(255, 255, 255, 0.1);
       --accent: #00bcd4;
-      --text: #ffffff;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+      --text: #fff;
+      --font: 'Courier New', monospace;
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #1e1e1e, #111);
-      color: var(--text);
-      min-height: 100vh;
+      background: linear-gradient(135deg, #1f1f1f, #121212);
+      margin: 0;
+      padding: 2rem;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 2rem;
+      font-family: var(--font);
+      color: var(--text);
+      min-height: 100vh;
     }
 
-    .container {
-      max-width: 900px;
-      width: 100%;
-      padding: 2rem;
+    .card {
+      display: flex;
+      flex-wrap: wrap;
       background: var(--glass-bg);
       border: 1px solid var(--glass-border);
-      border-radius: 1.5rem;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      max-width: 1000px;
+      width: 100%;
+      gap: 2rem;
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.5rem;
+    .left {
+      flex: 1 1 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .left img {
+      width: 160px;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 50%;
+      background: #333;
+    }
+
+    .left h1 {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .left .info {
+      text-align: left;
+      margin-top: 1rem;
+    }
+
+    .info p {
+      margin: 0.3rem 0;
+    }
+
+    .right {
+      flex: 2 1 400px;
+    }
+
+    .quote {
+      font-style: italic;
+      margin-bottom: 1rem;
+      color: #aaa;
+    }
+
+    .section {
+      margin-top: 1.2rem;
+    }
+
+    .section h2 {
+      font-size: 1.2rem;
       color: var(--accent);
+      margin-bottom: 0.3rem;
     }
 
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--accent);
-    }
-
-    p, li {
-      font-size: 1rem;
+    .section p {
+      margin: 0;
       line-height: 1.6;
     }
 
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .footer {
-      text-align: center;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      color: #bbb;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 1.2rem;
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        align-items: center;
       }
 
-      h1 {
-        font-size: 1.8rem;
-      }
-
-      h2 {
-        font-size: 1.2rem;
+      .left, .right {
+        flex: 1 1 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>low_kb – Portfolio</h1>
 
-    <h2>O mnie</h2>
-    <p>Jestem programistą specjalizującym się w JavaScript, TypeScript, Java oraz C#. Tworzę szybkie, modułowe rozwiązania zgodne z zasadami DRY, SOLID i OOP. Skupiam się na wydajności, testowalności i gotowości do skalowania projektów.</p>
+  <div class="card">
+    <div class="left">
+      <img src="https://via.placeholder.com/160x160.png?text=low_kb" alt="low_kb avatar"/>
+      <h1>low_kb</h1>
+      <div class="info">
+        <p><strong>Wiek:</strong> 27</p>
+        <p><strong>Wykształcenie:</strong> Inżynier (lub wpisz swoje)</p>
+        <p><strong>Rodzina:</strong> -</p>
+        <p><strong>Zawód:</strong> Programista JS / TS / Java / C#</p>
+      </div>
+    </div>
+    <div class="right">
+      <div class="quote">“Clean code is not a goal. Clean code is a habit.”</div>
 
-    <h2>Umiejętności</h2>
-    <ul>
-      <li>JavaScript / TypeScript (Node.js, Fastify, NestJS)</li>
-      <li>Java (Netty, mixiny, klienty Minecraft)</li>
-      <li>C# (.NET Core, Unity)</li>
-      <li>Bazy danych: MongoDB, PostgreSQL, Prisma</li>
-      <li>Frontend: React, Preact, Vite</li>
-    </ul>
+      <div class="section">
+        <h2>Biografia</h2>
+        <p>
+          low_kb to wszechstronny programista specjalizujący się w tworzeniu nowoczesnych aplikacji w JS, TS, Javie i C#. Zorientowany na wysoką jakość kodu, testowalność, zgodność z zasadami DRY i SOLID. Działa aktywnie w obszarze backendu i frontendów, zapewniając rozwojowe i skalowalne rozwiązania.
+        </p>
+      </div>
 
-    <h2>Projekty</h2>
-    <ul>
-      <li>System WebSocketAPI z modularną obsługą pakietów i autoryzacją</li>
-      <li>Moduł kosmetyków i emotek w kliencie Minecraft (1.8.9+)</li>
-      <li>Backend PvP z lobby, Minestom i zewnętrzną synchronizacją</li>
-    </ul>
+      <div class="section">
+        <h2>Cele</h2>
+        <p>
+          Tworzenie innowacyjnych projektów open-source, rozwój własnych narzędzi backendowych oraz budowa elastycznych architektur systemowych.
+        </p>
+      </div>
 
-    <h2>Kontakt</h2>
-    <p>Email: <a href="mailto:kontakt@example.com">kontakt@example.com</a></p>
-    <p>GitHub: <a href="https://github.com/lowkb" target="_blank">github.com/lowkb</a></p>
-
-    <div class="footer">
-      © 2025 low_kb. Wszelkie prawa zastrzeżone.
+      <div class="section">
+        <h2>Frustracje</h2>
+        <p>
+          Niewydajny kod, brak modularności w projektach oraz nieprzemyślana architektura. Utrudniona współpraca przy źle zaplanowanych strukturach.
+        </p>
+      </div>
     </div>
   </div>
+
 </body>
 </html>

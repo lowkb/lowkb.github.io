@@ -25,7 +25,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 40px;
-  align-items: center;
 }
 
 .card {
@@ -33,13 +32,10 @@ body {
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   padding: 40px;
-  width: 100%;
-  max-width: 900px;
 }
 
 .header-card {
   text-align: center;
-  margin-bottom: 40px;
 }
 
 .header-card h1 {
@@ -51,10 +47,11 @@ body {
 .subheader {
   font-size: 1.1rem;
   color: #aaa;
+  margin-bottom: 20px;
 }
 
 .avatar {
-  margin: 0 auto 20px;
+  margin: 0 auto 20px auto;
   width: 120px;
   height: 120px;
   background-color: #333;
@@ -62,99 +59,99 @@ body {
 }
 
 .section {
+  width: 100%;
   margin-bottom: 40px;
 }
 
-.section:last-child {
-  margin-bottom: 0;
-}
-
 .section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
+  font-size: 2rem;
+  margin-bottom: 20px;
   text-align: center;
   border-bottom: 2px solid #333;
   padding-bottom: 8px;
   font-family: 'Roboto Mono', monospace;
+  font-weight: 700;
+}
+
+.section p,
+.section .info-block div,
+.section ul li {
+  font-size: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.4;
 }
 
 .info-block {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  align-items: center;
+  gap: 15px;
+  padding: 0 10px;
 }
 
 .info-block div {
-  flex: 1 1 45%;
-  max-width: 45%;
-  text-align: center;
+  flex: 1 1 250px;
+  max-width: 250px;
 }
 
 ul {
   list-style: none;
+  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
   justify-content: center;
-  align-items: center;
-  padding: 0;
+  gap: 15px;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 ul li {
   background: #2a2a2a;
-  padding: 10px 15px;
+  padding: 8px 12px;
   border-radius: 8px;
   font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
   max-width: 250px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  white-space: normal;
 }
 
+/* Mobile responsive */
 @media (max-width: 600px) {
   body {
     padding: 10px;
   }
 
-  .container {
-    gap: 30px;
-  }
-
   .card {
     padding: 20px;
-    max-width: 100%;
-    border-radius: 12px;
-  }
-
-  .header-card h1 {
-    font-size: 2.2rem;
-  }
-
-  .subheader {
-    font-size: 1rem;
   }
 
   .section h2 {
-    font-size: 1.3rem;
-    padding-bottom: 6px;
-    border-bottom-width: 1.5px;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
   }
 
-  .info-block div,
-  p,
-  ul li {
-    font-size: 1rem;
+  .section p,
+  .section .info-block div,
+  .section ul li {
+    font-size: 0.9rem;
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .info-block {
+    gap: 12px;
+  }
+
+  ul {
+    flex-direction: column;
+    gap: 10px;
   }
 
   .info-block div {
     flex: 1 1 100%;
     max-width: 100%;
-  }
-
-  ul {
-    flex-direction: column;
   }
 }

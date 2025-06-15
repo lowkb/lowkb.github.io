@@ -1,21 +1,23 @@
+/* Reset */
 *, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html, body {
-  height: 100%;
+html {
+  font-size: 16px;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: 100%;
   font-family: 'Roboto', sans-serif;
   background-color: #121212;
   color: #f5f5f5;
   line-height: 1.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
 }
 
@@ -27,6 +29,7 @@ body {
   gap: 40px;
 }
 
+/* Card */
 .card {
   background: #1e1e1e;
   border-radius: 16px;
@@ -36,16 +39,17 @@ body {
 }
 
 .avatar {
-  margin: 0 auto 20px auto;
   width: 120px;
   height: 120px;
   background-color: #333;
   border-radius: 50%;
+  margin: 0 auto 20px;
 }
 
 h1 {
   font-family: 'Roboto Mono', monospace;
-  font-size: 3rem;
+  font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 8px;
 }
 
@@ -55,14 +59,19 @@ h1 {
   margin-bottom: 30px;
 }
 
+/* Sections */
 .section {
   margin-bottom: 40px;
 }
 
+.section:last-child {
+  margin-bottom: 0;
+}
+
 .section h2 {
-  font-size: 2rem;
   font-family: 'Roboto Mono', monospace;
   font-weight: 700;
+  font-size: 2rem;
   margin-bottom: 20px;
   border-bottom: 2px solid #333;
   padding-bottom: 8px;
@@ -72,9 +81,10 @@ h1 {
   font-size: 1rem;
   max-width: 600px;
   margin: 0 auto;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
+/* Info-block */
 .info-block {
   display: flex;
   flex-wrap: wrap;
@@ -93,15 +103,16 @@ h1 {
   word-wrap: break-word;
 }
 
+/* Lists */
 ul {
   list-style: none;
-  padding: 0;
-  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
   max-width: 900px;
+  margin: 0 auto;
+  padding: 0;
 }
 
 ul li {
@@ -112,11 +123,51 @@ ul li {
   font-size: 1rem;
   max-width: 250px;
   text-align: center;
-  white-space: normal;
   word-break: break-word;
 }
 
-@media (max-width: 600px) {
+/* Link styling */
+a {
+  color: #4da6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    gap: 30px;
+  }
+
+  .card {
+    padding: 30px;
+  }
+
+  h1 {
+    font-size: 2.2rem;
+  }
+
+  .subheader {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .section h2 {
+    font-size: 1.7rem;
+    margin-bottom: 15px;
+  }
+
+  .section p,
+  .info-block div,
+  ul li {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
   body {
     padding: 10px;
   }
@@ -126,17 +177,17 @@ ul li {
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .subheader {
-    font-size: 1rem;
-    margin-bottom: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
   }
 
   .section h2 {
-    font-size: 1.6rem;
-    margin-bottom: 15px;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
   }
 
   .section p {
@@ -146,8 +197,8 @@ ul li {
   }
 
   .info-block {
+    gap: 12px;
     max-width: 100%;
-    gap: 15px;
   }
 
   .info-block div {
@@ -157,12 +208,12 @@ ul li {
 
   ul {
     flex-direction: column;
-    max-width: 100%;
     gap: 10px;
+    max-width: 100%;
   }
 
   ul li {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     max-width: 100%;
   }
 }

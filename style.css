@@ -32,22 +32,7 @@ body {
   border-radius: 16px;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
   padding: 40px;
-}
-
-.header-card {
   text-align: center;
-}
-
-.header-card h1 {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 3rem;
-  margin-bottom: 8px;
-}
-
-.subheader {
-  font-size: 1.1rem;
-  color: #aaa;
-  margin-bottom: 20px;
 }
 
 .avatar {
@@ -58,28 +43,35 @@ body {
   border-radius: 50%;
 }
 
+h1 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 3rem;
+  margin-bottom: 8px;
+}
+
+.subheader {
+  font-size: 1.1rem;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
 .section {
-  width: 100%;
   margin-bottom: 40px;
 }
 
 .section h2 {
   font-size: 2rem;
-  margin-bottom: 20px;
-  text-align: center;
-  border-bottom: 2px solid #333;
-  padding-bottom: 8px;
   font-family: 'Roboto Mono', monospace;
   font-weight: 700;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
 }
 
-.section p,
-.section .info-block div,
-.section ul li {
+.section p {
   font-size: 1rem;
-  max-width: 400px;
+  max-width: 600px;
   margin: 0 auto;
-  text-align: center;
   line-height: 1.4;
 }
 
@@ -87,38 +79,43 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
+  max-width: 700px;
+  margin: 0 auto;
   padding: 0 10px;
 }
 
 .info-block div {
   flex: 1 1 250px;
   max-width: 250px;
+  font-size: 1rem;
+  text-align: center;
+  word-wrap: break-word;
 }
 
 ul {
   list-style: none;
   padding: 0;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 15px;
-  margin: 0 auto;
   max-width: 900px;
 }
 
 ul li {
   background: #2a2a2a;
-  padding: 8px 12px;
+  padding: 10px 15px;
   border-radius: 8px;
   font-family: 'Roboto Mono', monospace;
   font-size: 1rem;
   max-width: 250px;
   text-align: center;
   white-space: normal;
+  word-break: break-word;
 }
 
-/* Mobile responsive */
 @media (max-width: 600px) {
   body {
     padding: 10px;
@@ -128,30 +125,44 @@ ul li {
     padding: 20px;
   }
 
+  h1 {
+    font-size: 2rem;
+  }
+
+  .subheader {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
   .section h2 {
     font-size: 1.6rem;
     margin-bottom: 15px;
   }
 
-  .section p,
-  .section .info-block div,
-  .section ul li {
+  .section p {
     font-size: 0.9rem;
     max-width: 100%;
     padding: 0 10px;
   }
 
   .info-block {
-    gap: 12px;
-  }
-
-  ul {
-    flex-direction: column;
-    gap: 10px;
+    max-width: 100%;
+    gap: 15px;
   }
 
   .info-block div {
     flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  ul {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  ul li {
+    font-size: 0.95rem;
     max-width: 100%;
   }
 }

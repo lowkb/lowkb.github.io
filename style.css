@@ -1,5 +1,4 @@
-/* Reset */
-*, *::before, *::after {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -10,32 +9,31 @@ html {
 }
 
 body {
-  height: 100%;
   font-family: 'Roboto', sans-serif;
   background-color: #121212;
   color: #f5f5f5;
   line-height: 1.6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-/* Card */
 .card {
   background: #1e1e1e;
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-  padding: 40px;
-  text-align: center;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .avatar {
@@ -43,90 +41,70 @@ body {
   height: 120px;
   background-color: #333;
   border-radius: 50%;
-  margin: 0 auto 20px;
+  margin: 0 auto;
 }
 
-h1 {
+.main-title {
+  font-size: 2.5rem;
   font-family: 'Roboto Mono', monospace;
   font-weight: 700;
-  font-size: 2.5rem;
-  margin-bottom: 8px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .subheader {
-  font-size: 1.1rem;
+  text-align: center;
   color: #aaa;
-  margin-bottom: 30px;
+  margin-top: 10px;
 }
 
-/* Sections */
 .section {
-  margin-bottom: 40px;
-}
-
-.section:last-child {
-  margin-bottom: 0;
-}
-
-.section h2 {
-  font-family: 'Roboto Mono', monospace;
-  font-weight: 700;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #333;
-  padding-bottom: 8px;
-}
-
-.section p {
-  font-size: 1rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.5;
-}
-
-/* Info-block */
-.info-block {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-family: 'Roboto Mono', monospace;
+  text-align: center;
+  border-bottom: 1px solid #333;
+  padding-bottom: 6px;
+}
+
+p {
+  text-align: center;
   max-width: 700px;
   margin: 0 auto;
-  padding: 0 10px;
-}
-
-.info-block div {
-  flex: 1 1 250px;
-  max-width: 250px;
   font-size: 1rem;
-  text-align: center;
-  word-wrap: break-word;
 }
 
-/* Lists */
-ul {
-  list-style: none;
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  justify-items: center;
+  font-size: 1rem;
+}
+
+.pill-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
-  max-width: 900px;
-  margin: 0 auto;
+  gap: 10px;
   padding: 0;
+  list-style: none;
 }
 
-ul li {
+.pill-list li {
   background: #2a2a2a;
   padding: 10px 15px;
   border-radius: 8px;
   font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  max-width: 250px;
-  text-align: center;
-  word-break: break-word;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
-/* Link styling */
 a {
   color: #4da6ff;
   text-decoration: none;
@@ -136,84 +114,51 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Responsive */
+/* RESPONSYWNOŚĆ */
+
 @media (max-width: 768px) {
-  .container {
-    gap: 30px;
+  .main-title {
+    font-size: 2rem;
   }
 
-  .card {
-    padding: 30px;
+  .section-title {
+    font-size: 1.5rem;
   }
 
-  h1 {
-    font-size: 2.2rem;
+  .pill-list li {
+    font-size: 0.85rem;
   }
 
-  .subheader {
-    font-size: 1rem;
-    margin-bottom: 20px;
-  }
-
-  .section h2 {
-    font-size: 1.7rem;
-    margin-bottom: 15px;
-  }
-
-  .section p,
-  .info-block div,
-  ul li {
+  p,
+  .info-grid {
     font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
-  body {
-    padding: 10px;
-  }
-
   .card {
     padding: 20px;
   }
 
-  h1 {
-    font-size: 1.8rem;
+  .avatar {
+    width: 100px;
+    height: 100px;
   }
 
-  .subheader {
-    font-size: 0.9rem;
-    margin-bottom: 15px;
+  .main-title {
+    font-size: 1.6rem;
   }
 
-  .section h2 {
-    font-size: 1.4rem;
-    margin-bottom: 12px;
+  .section-title {
+    font-size: 1.3rem;
   }
 
-  .section p {
-    font-size: 0.9rem;
-    max-width: 100%;
-    padding: 0 10px;
+  .pill-list li {
+    font-size: 0.8rem;
+    padding: 8px 12px;
   }
 
-  .info-block {
-    gap: 12px;
-    max-width: 100%;
-  }
-
-  .info-block div {
-    flex: 1 1 100%;
-    max-width: 100%;
-  }
-
-  ul {
-    flex-direction: column;
-    gap: 10px;
-    max-width: 100%;
-  }
-
-  ul li {
-    font-size: 0.9rem;
-    max-width: 100%;
+  .info-grid {
+    grid-template-columns: 1fr;
   }
 }

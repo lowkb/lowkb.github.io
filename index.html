@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alish Dahal - Portfolio</title>
+  <title>low_kb - Portfolio</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
+    body {
       font-family: 'Courier New', Courier, monospace;
       background-color: #121212;
       color: #f5f5f5;
@@ -33,12 +33,19 @@
       font-size: 1rem;
       color: #aaa;
     }
+    .avatar {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 120px;
+      height: 120px;
+      background-color: #333;
+      border-radius: 50%;
+    }
     .section {
       margin-bottom: 40px;
     }
     .section h2 {
       font-size: 1.5rem;
-      color: #fff;
       border-bottom: 1px solid #444;
       padding-bottom: 5px;
       margin-bottom: 10px;
@@ -52,19 +59,11 @@
     .info-block div {
       flex: 1 1 45%;
     }
-    .quote {
-      font-style: italic;
-      border-left: 4px solid #ff5722;
-      padding-left: 15px;
-      margin-bottom: 30px;
+    ul {
+      padding-left: 20px;
     }
-    .avatar {
-      display: block;
-      margin: 0 auto 20px auto;
-      width: 120px;
-      height: 120px;
-      background-color: #333;
-      border-radius: 50%;
+    ul li {
+      margin-bottom: 5px;
     }
     @media (max-width: 600px) {
       .info-block div {
@@ -77,45 +76,45 @@
   <div class="container">
     <div class="header">
       <div class="avatar"></div>
-      <h1>Alish Dahal</h1>
-      <p class="subheader">Head of Recruiter, Dahal Tech Pvt. Ltd.</p>
-    </div>
-
-    <div class="quote">
-      “Recruiting is not a bad job but you should have ability to smell lies. You also should be able to help young people to make decision.”
+      <h1>low_kb</h1>
+      <p class="subheader">Programista Fullstack</p>
     </div>
 
     <div class="section">
-      <h2>Basic Info</h2>
+      <h2>Podstawowe informacje</h2>
       <div class="info-block">
-        <div><strong>Age:</strong> 27</div>
-        <div><strong>Education:</strong> MBA</div>
-        <div><strong>Family:</strong> Parents, sister and wife</div>
-        <div><strong>Occupation:</strong> Head of Recruiter</div>
+        <div><strong>Wiek:</strong> 18</div>
+        <div><strong>Wykształcenie:</strong> Technikum (profil informatyczny)</div>
+        <div><strong>Rodzina:</strong> Rodzice, siostra, żona</div>
+        <div><strong>Zawód:</strong> Programista Fullstack</div>
       </div>
     </div>
 
     <div class="section">
-      <h2>Biography</h2>
+      <h2>Biografia</h2>
       <p>
-        Alish is an energetic employee trying to establish himself as one of the leaders in the Dahal Tech company.
-        He has been recently married and is trying to balance work life and family life.
-        As head of recruiting, he is also responsible for bringing top talent of Nepal into his company.
+        Jestem ambitnym i doświadczonym programistą fullstack specjalizującym się w JavaScript, TypeScript, C# i Java. W pracy kieruję się zasadami DRY, SOLID oraz czystym kodem. Tworzę wydajne, testowalne i łatwe w utrzymaniu rozwiązania. Każdy projekt traktuję indywidualnie, dbając o najwyższą jakość i możliwość łatwej rozbudowy w przyszłości.
       </p>
     </div>
 
     <div class="section">
-      <h2>Goals</h2>
-      <p>
-        To be a board member and someday CEO of the company and to have a happy married life.
-      </p>
-    </div>
-
-    <div class="section">
-      <h2>Frustrations</h2>
+      <h2>Języki programowania</h2>
       <ul>
-        <li>Office work taking more of his time than he wanted.</li>
-        <li>Difficulty in keeping pace with current industry standards.</li>
+        <li>JavaScript (JS)</li>
+        <li>TypeScript (TS)</li>
+        <li>Java</li>
+        <li>C#</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Technologie</h2>
+      <ul>
+        <li>Backend: Fastify, Express.js, NestJS</li>
+        <li>Bazy danych: MongoDB (Mongoose), PostgreSQL (Prisma, Sequelize)</li>
+        <li>Frontend: Preact, React, Vite, EJS</li>
+        <li>Inne: WebSocket, Socket.io, Docker, Discord.js, Oceanic.js</li>
+        <li>Bezpieczeństwo: CORS, AES, RSA, E2EE</li>
       </ul>
     </div>
   </div>

@@ -54,7 +54,7 @@ body {
 }
 
 .avatar {
-  margin: 0 auto 20px auto;
+  margin: 0 auto 20px;
   width: 120px;
   height: 120px;
   background-color: #333;
@@ -115,6 +115,40 @@ ul li {
 }
 
 @media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .container {
+    gap: 30px;
+  }
+
+  .card {
+    padding: 20px;
+    max-width: 100%;
+    border-radius: 12px;
+  }
+
+  .header-card h1 {
+    font-size: 2.2rem;
+  }
+
+  .subheader {
+    font-size: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.3rem;
+    padding-bottom: 6px;
+    border-bottom-width: 1.5px;
+  }
+
+  .info-block div,
+  p,
+  ul li {
+    font-size: 1rem;
+  }
+
   .info-block div {
     flex: 1 1 100%;
     max-width: 100%;
@@ -122,11 +156,5 @@ ul li {
 
   ul {
     flex-direction: column;
-    align-items: center;
-  }
-
-  .card {
-    padding: 20px;
-    max-width: 100%;
   }
 }

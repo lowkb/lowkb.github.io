@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'preact/hooks'
 import * as THREE from 'three'
+import { ASCIIEffect } from 'three/examples/jsm/effects/ASCIIEffect'
 
 export function Icon() {
   const mountRef = useRef()
@@ -10,22 +11,28 @@ export function Icon() {
 
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000)
+    camera.position.z = 5
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
+    const renderer = new THREE.WebGLRenderer()
     renderer.setSize(width, height)
-    renderer.setClearColor(0x000000, 0)
 
-    const canvas = renderer.domElement
-    canvas.style.position = 'absolute'
-    canvas.style.top = '0'
-    canvas.style.left = '0'
-    canvas.style.width = '100%'
-    canvas.style.height = '100%'
-    canvas.style.zIndex = '1'
+    const effect = new ASCIIEffect(renderer, ' .:-+*=%@#', { invert: true })
+    effect.setSize(width, height)
 
-    mountRef.current.appendChild(canvas)
+    const container = effect.domElement
+    container.style.color = '#00ff90'
+    container.style.backgroundColor = 'transparent'
+    container.style.fontFamily = 'monospace'
+    container.style.whiteSpace = 'pre'
+    container.style.lineHeight = '1em'
+    container.style.position = 'absolute'
+    container.style.top = '0'
+    container.style.left = '0'
+    container.style.zIndex = '1'
 
-    const geometry = new THREE.BoxGeometry()
+    mountRef.current.appendChild(container)
+
+    const geometry = new THREE.BoxGeometry(2, 2, 2)
     const material = new THREE.MeshStandardMaterial({ color: 0x00ff90 })
     const cube = new THREE.Mesh(geometry, material)
     scene.add(cube)
@@ -34,19 +41,19 @@ export function Icon() {
     light.position.set(5, 5, 5)
     scene.add(light)
 
-    camera.position.z = 3
-
     const animate = () => {
       requestAnimationFrame(animate)
       cube.rotation.x += 0.01
       cube.rotation.y += 0.01
-      renderer.render(scene, camera)
+      effect.render(scene, camera)
     }
 
     animate()
 
     return () => {
-      mountRef.current.removeChild(canvas)
+      if (mountRef.current.contains(container)) {
+        mountRef.current.removeChild(container)
+      }
     }
   }, [])
 
@@ -56,9 +63,7 @@ export function Icon() {
       style={{
         width: '100%',
         height: '100%',
-        position: 'absolute',
-        top: 0,
-        left: 0,
+        position: 'relative',
         zIndex: 1
       }}
     />

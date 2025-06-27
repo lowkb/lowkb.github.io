@@ -13,16 +13,17 @@ export function Icon() {
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setSize(width, height)
-    renderer.setClearColor(0x000000, 0) // całkowicie przezroczyste tło
+    renderer.setClearColor(0x000000, 0)
 
-    // dodajemy canvas do DOM
-    mountRef.current.appendChild(renderer.domElement)
-    renderer.domElement.style.position = 'absolute'
-    renderer.domElement.style.top = 0
-    renderer.domElement.style.left = 0
-    renderer.domElement.style.width = '100%'
-    renderer.domElement.style.height = '100%'
-    renderer.domElement.style.zIndex = 1
+    const canvas = renderer.domElement
+    canvas.style.position = 'absolute'
+    canvas.style.top = '0'
+    canvas.style.left = '0'
+    canvas.style.width = '100%'
+    canvas.style.height = '100%'
+    canvas.style.zIndex = '1'
+
+    mountRef.current.appendChild(canvas)
 
     const geometry = new THREE.BoxGeometry()
     const material = new THREE.MeshStandardMaterial({ color: 0x00ff90 })
@@ -45,7 +46,7 @@ export function Icon() {
     animate()
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement)
+      mountRef.current.removeChild(canvas)
     }
   }, [])
 
@@ -58,7 +59,7 @@ export function Icon() {
         position: 'absolute',
         top: 0,
         left: 0,
-        overflow: 'hidden'
+        zIndex: 1
       }}
     />
   )

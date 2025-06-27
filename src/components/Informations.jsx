@@ -1,4 +1,4 @@
-export function Info() {
+export function Me() {
   return (
     <div>
       Welcome to low_kb shell

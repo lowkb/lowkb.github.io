@@ -1,4 +1,4 @@
-export function InfoTerminal() {
+export function Info() {
   return (
     <div>
       Welcome to low_kb shell

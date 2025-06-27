@@ -4,20 +4,20 @@ html, body {
   height: 100%;
   background: #121212;
   font-family: monospace;
+  overflow: hidden;
 }
 
 .icon {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
 }
 
 .informations {
   position: absolute;
   top: 0;
   right: 0;
-  z-index: 2;
+  z-index: 10;
   width: 50%;
   height: 100%;
   padding: 2rem;
@@ -30,25 +30,19 @@ html, body {
   backdrop-filter: blur(4px);
 }
 
-.loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #121212;
-  color: #00ff90;
-  font-family: monospace;
-  height: 100vh;
-  font-size: 1.5rem;
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: scale(0.98);
+@media (max-width: 768px) {
+  .informations {
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 1.5rem;
+    backdrop-filter: none;
+    background: #121212;
   }
-  to {
-    opacity: 1;
-    transform: scale(1);
+
+  .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }

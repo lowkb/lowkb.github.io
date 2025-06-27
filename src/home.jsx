@@ -6,7 +6,7 @@ export function Home() {
   return (
     <div className="icon">
       <Icon />
-      <div className="info">
+      <div className="informations">
         <Me />
       </div>
     </div>

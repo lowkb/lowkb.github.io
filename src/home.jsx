@@ -4,9 +4,9 @@ import { Me } from './components/Informations'
 
 export function Home() {
   return (
-    <div className="canvas-wrapper">
+    <div className="icon">
       <Icon />
-      <div className="info-overlay">
+      <div className="info">
         <Me />
       </div>
     </div>

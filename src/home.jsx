@@ -1,9 +1,16 @@
 import './styles.css'
+import { Icon } from './components/Icon'
+import { Info } from './components/Informations'
 
 export function Home() {
   return (
-    <>
-      <h1>witaj</h1>
-    </>
+    <div className="app">
+      <div className="left">
+        <Icon3D />
+      </div>
+      <div className="right">
+        <InfoTerminal />
+      </div>
+    </div>
   )
 }

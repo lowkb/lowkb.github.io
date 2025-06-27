@@ -7,11 +7,22 @@ export function Icon() {
   useEffect(() => {
     const width = mountRef.current.clientWidth
     const height = mountRef.current.clientHeight
+
     const scene = new THREE.Scene()
     const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000)
+
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
     renderer.setSize(width, height)
+    renderer.setClearColor(0x000000, 0) // całkowicie przezroczyste tło
+
+    // dodajemy canvas do DOM
     mountRef.current.appendChild(renderer.domElement)
+    renderer.domElement.style.position = 'absolute'
+    renderer.domElement.style.top = 0
+    renderer.domElement.style.left = 0
+    renderer.domElement.style.width = '100%'
+    renderer.domElement.style.height = '100%'
+    renderer.domElement.style.zIndex = 1
 
     const geometry = new THREE.BoxGeometry()
     const material = new THREE.MeshStandardMaterial({ color: 0x00ff90 })
@@ -38,5 +49,17 @@ export function Icon() {
     }
   }, [])
 
-  return <div style={{ width: '100%', height: '100%' }} ref={mountRef} />
+  return (
+    <div
+      ref={mountRef}
+      style={{
+        width: '100%',
+        height: '100%',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        overflow: 'hidden'
+      }}
+    />
+  )
 }

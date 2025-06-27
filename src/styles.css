@@ -5,12 +5,15 @@ html, body {
   background: #121212;
   font-family: monospace;
   overflow: hidden;
+  color: #00ff90;
 }
 
 .icon {
   position: relative;
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: row;
 }
 
 .informations {
@@ -22,15 +25,23 @@ html, body {
   height: 100%;
   padding: 2rem;
   background: rgba(18, 18, 18, 0.6);
-  color: #00ff90;
   white-space: pre-line;
   display: flex;
   flex-direction: column;
   justify-content: center;
   backdrop-filter: blur(4px);
+  box-sizing: border-box;
+  overflow-y: auto;
 }
 
 @media (max-width: 768px) {
+  .icon {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    min-height: 100vh;
+  }
+
   .informations {
     position: static;
     width: 100%;
@@ -39,10 +50,41 @@ html, body {
     backdrop-filter: none;
     background: #121212;
   }
+}
 
-  .icon {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #121212;
+  color: #00ff90;
+  font-family: monospace;
+  height: 100vh;
+  width: 100vw;
+  font-size: 1.4rem;
+  z-index: 999;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.loader-box {
+  text-align: left;
+  display: inline-flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.loader-text,
+.loader-bar {
+  white-space: pre;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }

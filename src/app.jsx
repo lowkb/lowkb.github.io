@@ -7,8 +7,15 @@ function App() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    const timeout = setTimeout(() => setLoading(false), 2000)
-    return () => clearTimeout(timeout)
+    if (document.readyState === 'complete') {
+      setLoading(false)
+      return
+    }
+
+    const onLoad = () => setLoading(false)
+    window.addEventListener('load', onLoad)
+
+    return () => window.removeEventListener('load', onLoad)
   }, [])
 
   return loading ? <Loader /> : <Home />

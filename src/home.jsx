@@ -1,7 +1,6 @@
-import './app.css'
+import './style.css'
 
-export function App() {
-
+export function Home() {
   return (
     <>
       <h1>witaj</h1>

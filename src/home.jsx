@@ -6,10 +6,10 @@ export function Home() {
   return (
     <div className="app">
       <div className="left">
-        <Icon3D />
+        <Icon />
       </div>
       <div className="right">
-        <InfoTerminal />
+        <Info />
       </div>
     </div>
   )

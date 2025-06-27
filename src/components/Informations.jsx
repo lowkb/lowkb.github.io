@@ -1,15 +1,15 @@
-export function Informations() {
+export function InfoTerminal() {
   return (
     <div>
       Welcome to low_kb shell
 
-      {'\n\n'}> whoami
+      {'\n\n'}&gt; whoami
       {'\n'}low_kb – JS, C++, VM, WebRTC
 
-      {'\n\n'}> github
+      {'\n\n'}&gt; github
       {'\n'}https://github.com/lowkb
 
-      {'\n\n'}> projects
+      {'\n\n'}&gt; projects
       {'\n'}- lowScript
       {'\n'}- WebRTC Chat
       {'\n'}- Dashboard UI

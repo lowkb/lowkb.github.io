@@ -3835,4 +3835,4 @@ void main() {
 `,"> projects",`
 `,"- lowScript",`
 `,"- WebRTC Chat",`
-`,"- Dashboard UI"]})}function Jp(){return zt("div",{className:"icon",children:[zt(Zp,{}),zt("div",{className:"info",children:zt(jp,{})})]})}function Qp(){return zt("div",{class:"loader-screen",children:zt("div",{class:"loader-text",children:"Loading..."})})}function em(){const[i,e]=Dl(!0);return zo(()=>{const t=setTimeout(()=>e(!1),2e3);return()=>clearTimeout(t)},[]),i?zt(Qp,{}):zt(Jp,{})}Cl(zt(em,{}),document.getElementById("home"));
+`,"- Dashboard UI"]})}function Jp(){return zt("div",{className:"icon",children:[zt(Zp,{}),zt("div",{className:"informations",children:zt(jp,{})})]})}function Qp(){return zt("div",{class:"loader-screen",children:zt("div",{class:"loader-text",children:"Loading..."})})}function em(){const[i,e]=Dl(!0);return zo(()=>{const t=setTimeout(()=>e(!1),2e3);return()=>clearTimeout(t)},[]),i?zt(Qp,{}):zt(Jp,{})}Cl(zt(em,{}),document.getElementById("home"));

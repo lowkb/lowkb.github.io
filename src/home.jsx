@@ -1,15 +1,13 @@
 import './styles.css'
 import { Icon } from './components/Icon'
-import { Info } from './components/Informations'
+import { Me } from './components/Informations'
 
 export function Home() {
   return (
-    <div className="app">
-      <div className="left">
-        <Icon />
-      </div>
-      <div className="right">
-        <Info />
+    <div className="canvas-wrapper">
+      <Icon />
+      <div className="info-overlay">
+        <Me />
       </div>
     </div>
   )

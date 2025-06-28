@@ -1,5 +1,7 @@
 import { Layout } from '@/layouts/Layout.jsx';
 import { Profile } from '@/components/Profile.jsx';
+import banner from '@/assets/img/banner.gif';
+import avatar from '@/assets/img/avatar.png';
 import '@style/style.css';
 
 const links = [
@@ -12,8 +14,8 @@ export default function Main() {
   return (
     <Layout>
       <Profile
-        bannerUrl="/img/banner.gif"
-        avatarUrl="/img/avatar.png"
+        bannerUrl={banner}
+        avatarUrl={avatar}
         name="low_kb"
         bio="Full-stack developer passionate about clean code, open source, and building performant web apps."
         links={links}

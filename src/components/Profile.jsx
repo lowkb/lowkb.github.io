@@ -2,7 +2,7 @@ import { Banner } from './Banner.jsx';
 import { Avatar } from './Avatar.jsx';
 import { Username } from './Username.jsx';
 import { Bio } from './Bio.jsx';
-import { links } from './links.jsx';
+import { Links } from './links.jsx';
 
 export function Profile({
   bannerUrl,
@@ -18,7 +18,7 @@ export function Profile({
       <Avatar avatarUrl={avatarUrl} />
       <Username name={name} />
       <Bio text={bio} />
-      <links links={links} />
+      <Links links={links} />
     </section>
   );
 }

@@ -3,5 +3,11 @@ import preact from '@preact/preset-vite';
 
 export default defineConfig({
   base: '/',
-    plugins: [preact()],
-    });
+  plugins: [preact()],
+  resolve: {
+    alias: {
+      '@': '/src',
+      '@assets': '/assets'
+    }
+  }
+});

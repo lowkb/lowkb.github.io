@@ -15,7 +15,9 @@ export function Profile({
   return (
     <section className="profile" role="region" aria-label={`${name} profile`}>
       <Banner bannerUrl={bannerUrl} />
-      <Avatar avatarUrl={avatarUrl} />
+      <div className="avatar-wrapper">
+        <Avatar avatarUrl={avatarUrl} />
+      </div>
       <Username name={name} />
       <Bio text={bio} />
       <Links links={links} />

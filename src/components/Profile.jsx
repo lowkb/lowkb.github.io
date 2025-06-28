@@ -2,7 +2,7 @@ import { Banner } from './Banner.jsx';
 import { Avatar } from './Avatar.jsx';
 import { Username } from './Username.jsx';
 import { Bio } from './Bio.jsx';
-import { Links } from './links.jsx';
+import { Links } from './Links.jsx';
 
 export function Profile({
   bannerUrl,

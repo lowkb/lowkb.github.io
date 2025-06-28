@@ -1,25 +1,26 @@
 :root {
   /* Kolory tła */
-  --bg-primary: rgba(18, 18, 20, 0.85);
-  --bg-secondary: rgba(32, 34, 37, 0.75);
-  --bg-glass: rgba(255, 255, 255, 0.05);
+  --bg-base: #0d0d0f;
+  --bg-glass: rgba(255, 255, 255, 0.04);
 
-  /* Kolory tekstu */
-  --text-primary: #f5f6fa;
-  --text-secondary: #a5aab0;
+  /* Tekst */
+  --text-primary: #e0e0ff;
+  --text-secondary: #b0b0d0;
 
-  /* Akcent */
-  --accent: #7f5af0;
-  --accent-hover: #9b79ff;
+  /* Neon akcenty */
+  --neon-pink: #ff00c8;
+  --neon-cyan: #00fff7;
+  --neon-purple: #a066ff;
+  --neon-glow: 0 0 12px rgba(255, 0, 200, 0.8);
 
-  /* Cienie i obramowanie */
-  --glass-blur: 30px;
+  /* Glass efekt */
+  --glass-blur: 24px;
   --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: rgba(0, 0, 0, 0.4);
+  --glass-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 
   /* Czcionki */
   --font-base: 16px;
-  --font-large: 20px;
+  --font-large: 22px;
   --font-small: 14px;
 }
 
@@ -32,40 +33,42 @@
 html, body {
   width: 100%;
   height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #121212;
+  background-color: var(--bg-base);
   color: var(--text-primary);
-  -webkit-font-smoothing: antialiased;
+  font-family: 'JetBrains Mono', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
 }
 
 .layout {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  padding: 1.5rem;
-  background: linear-gradient(145deg, #1a1a1d, #232327);
+  align-items: flex-start;
+  padding: 2rem;
+  background: linear-gradient(135deg, #050508, #0f0f13);
 }
 
-/* Główna karta profilu z efektem glass */
+/* Profil z efektem glassmorphism i neon */
 .profile {
   width: 100%;
-  max-width: 480px;
-  border-radius: 16px;
+  max-width: 500px;
   background: var(--bg-glass);
-  box-shadow: 0 8px 32px var(--glass-shadow);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   font-size: var(--font-base);
+  transition: box-shadow 0.3s ease;
 }
 
 /* Banner */
 .banner {
   width: 100%;
-  height: 140px;
+  height: 160px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -75,91 +78,80 @@ html, body {
 /* Avatar */
 .avatar-wrapper {
   position: relative;
-  width: 100%;
   display: flex;
   justify-content: center;
   margin-top: -50px;
 }
 
 .avatar {
-  width: 100px;
-  height: 100px;
-  background-position: center;
-  background-size: cover;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
-  border: 4px solid var(--bg-secondary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  background-color: #1a1a1d;
+  border: 3px solid var(--neon-pink);
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--neon-glow);
+  background-color: #111;
 }
 
 /* Username */
 .username {
   text-align: center;
-  margin-top: 0.75rem;
   font-weight: 700;
   font-size: var(--font-large);
   color: var(--text-primary);
+  margin-top: 1rem;
+  text-shadow: 0 0 6px var(--neon-purple);
 }
 
 /* Bio */
 .bio {
-  padding: 0 1.5rem 1.5rem;
-  font-size: var(--font-base);
-  line-height: 1.5;
-  color: var(--text-secondary);
-  opacity: 0.9;
+  padding: 1rem 1.5rem;
   text-align: center;
+  font-size: var(--font-base);
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
-/* Social links */
+/* Links */
 .links {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  padding-bottom: 1.5rem;
+  gap: 1.25rem;
+  padding: 1.5rem 0;
 }
 
 .links a {
-  color: var(--accent);
+  color: var(--neon-cyan);
   text-decoration: none;
   font-weight: 600;
   font-size: var(--font-base);
-  transition: color 0.3s ease, transform 0.2s ease;
+  transition: transform 0.2s ease, color 0.2s ease, text-shadow 0.2s ease;
 }
 
 .links a:hover {
-  color: var(--accent-hover);
-  transform: scale(1.05);
+  color: var(--neon-pink);
+  transform: scale(1.1);
+  text-shadow: 0 0 8px var(--neon-pink);
 }
 
-/* Responsywność */
+/* Responsive tweaks */
 @media (min-width: 768px) {
   .layout {
-    padding: 2.5rem;
+    padding: 3rem;
   }
 
   .profile {
-    max-width: 600px;
+    max-width: 640px;
     font-size: 18px;
   }
 
   .avatar {
-    width: 120px;
-    height: 120px;
-    border-width: 5px;
+    width: 130px;
+    height: 130px;
   }
 
   .banner {
-    height: 180px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .layout {
-    padding: 3.5rem;
-  }
-
-  .profile {
-    max-width: 700px;
+    height: 200px;
   }
 }

@@ -25,6 +25,36 @@ html, body {
   color: var(--text-color);
 }
 
+/* === WRAPPER CENTROWANY MOBILE + DESKTOP === */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  min-height: 100dvh;
+}
+
+/* === PANEL === */
+.panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px var(--glass-shadow);
+  border-radius: 1.5rem;
+
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 95vw;
+  max-height: 90vh;
+  overflow-y: auto;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* === KONTENT === */
 .panel-title {
   font-size: var(--font-size-title);
   font-weight: 600;
@@ -74,6 +104,7 @@ html, body {
   opacity: 0.9;
 }
 
+/* === DESKTOP SKALOWANIE === */
 @media (min-width: 768px) {
   :root {
     --font-size-base: 1.1rem;

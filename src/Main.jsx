@@ -1,7 +1,7 @@
 import { render } from 'preact';
 import { Layout } from '@/layouts/Layout.jsx';
 import { Profile } from '@/components/Profile.jsx';
-import '@style/styles.css';
+import '@style/style.css';
 
 const links = [
   { href: 'https://github.com/yourname', label: 'GitHub' },

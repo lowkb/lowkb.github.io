@@ -1,10 +1,4 @@
-import { Router } from 'preact-router';
-import Home from './pages/Home';
+import { render } from 'preact';
+import Main from './Main.jsx';
 
-export default function App() {
-  return (
-    <Router>
-      <Home path="/" />
-    </Router>
-  );
-}
+render(<Main />, document.getElementById('root'));

@@ -17,49 +17,47 @@
   padding: 0;
 }
 
-body {
+html, body {
+  height: 100%;
+  width: 100%;
   font-family: 'Segoe UI', sans-serif;
   background: #121212;
   color: var(--text-color);
-  min-height: 100dvh;
 }
 
-/* Nowa: lepszy wrapper */
+/* Container centrowany */
 .container {
-  width: 80%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem 0;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: start;
+  justify-content: center;
+  height: 100dvh; /* lub 100vh, ale 100dvh jest bezpieczniejsze na mobile */
+  width: 100%;
+  padding: 1rem;
 }
 
-/* Glass styling */
-.glass {
+/* Panel jako główna aplikacja */
+.panel {
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
   -webkit-backdrop-filter: blur(var(--glass-blur));
   border: 1px solid var(--glass-border);
   box-shadow: 0 4px 20px var(--glass-shadow);
   border-radius: 1.5rem;
-  width: 100%;
-}
-
-/* Panel layout */
-.panel {
   padding: 1.5rem;
   width: 100%;
+  max-width: 600px;
+  max-height: 90dvh;
+  overflow-y: auto;
 }
 
+/* Tytuł */
 .panel-title {
   font-size: var(--font-size-title);
   font-weight: 600;
   margin-bottom: 1.2rem;
 }
 
-/* App Card */
+/* Karta aplikacji */
 .card {
   display: flex;
   justify-content: space-between;
@@ -87,7 +85,7 @@ body {
   opacity: 0.7;
 }
 
-/* Button */
+/* Przycisk */
 .btn {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white;
@@ -104,7 +102,7 @@ body {
   opacity: 0.9;
 }
 
-/* Responsive scaling */
+/* Responsywność */
 @media (min-width: 768px) {
   :root {
     --font-size-base: 1.1rem;
@@ -112,13 +110,9 @@ body {
     --font-size-sub: 1rem;
   }
 
-  .container {
-    width: 70%;
-    padding: 3rem 0;
-  }
-
   .panel {
     padding: 2rem;
+    max-height: 80vh;
   }
 
   .btn {

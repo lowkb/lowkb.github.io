@@ -1,6 +1,4 @@
 import './styles.css'
-import { Icon } from './components/Icon'
-import { Me } from './components/Informations'
 import { Background } from './components/Background'
 
 export function Home() {

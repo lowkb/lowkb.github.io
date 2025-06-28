@@ -4,8 +4,8 @@ import { Me } from './components/Informations'
 
 export function Home() {
   return (
-    <div className="icon">
-      <Icon />
+   /* <div className="icon">
+      <Icon /> */
       <div className="informations">
         <Me />
       </div>

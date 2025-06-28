@@ -1,12 +1,11 @@
-export function Avatar({ bannerUrl }) {
+export function Avatar({ avatarUrl }) {
+
   return (
-    <div className="avatar-wrapper">
-      <div
-        className="avatar"
-        style={{ backgroundImage: `url(${bannerUrl})` }}
-        role="img"
-        aria-label="User avatar"
-      />
-    </div>
+    <div
+      className="avatar"
+      style={{ backgroundImage: `url(${avatarUrl})` }}
+      role="img"
+      aria-label="User avatar"
+    />
   );
 }

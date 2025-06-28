@@ -1,4 +1,4 @@
-export function links({ links }) {
+export function Links({ links }) {
   return (
     <nav className="links" aria-label="Social media links">
       {links.map(({ href, label }) => (

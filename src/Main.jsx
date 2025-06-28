@@ -12,8 +12,8 @@ export default function Main() {
   return (
     <Layout>
       <Profile
-        bannerUrl="/src/assets/img/banner.gif"
-        avatarUrl="/src/assets/img/avatar.png"
+        bannerUrl="/img/banner.gif"
+        avatarUrl="/img/avatar.png"
         name="low_kb"
         bio="Full-stack developer passionate about clean code, open source, and building performant web apps."
         links={links}

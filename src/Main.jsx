@@ -1,7 +1,7 @@
 import { render } from 'preact';
-import { Layout } from './layouts/Layout.jsx';
-import { Profile } from './components/Profile.jsx';
-import './style.css';
+import { Layout } from '@/layouts/Layout.jsx';
+import { Profile } from '@/components/Profile.jsx';
+import '@style/style.css';
 
 const links = [
   { href: 'https://github.com/yourname', label: 'GitHub' },
@@ -9,16 +9,16 @@ const links = [
   { href: 'https://linkedin.com/in/yourname', label: 'LinkedIn' },
 ];
 
-const App = () => (
+const Main = () => (
   <Layout>
     <Profile
       bannerUrl="/assets/banner.jpg"
       avatarUrl="/assets/avatar.png"
       name="low_kb"
       bio="Full-stack developer passionate about clean code, open source, and building performant web apps."
-      socialLinks={links}
+      links={links}
     />
   </Layout>
 );
 
-render(<App />, document.getElementById('app'));
+render(<Main />, document.getElementById('root'));

@@ -1,7 +1,8 @@
-export function Layout({ children }) {
+// src/layouts/Layout.jsx
+export default function Layout({ children }) {
   return (
-    <div className="layout">
-      <main>{children}</main>
-    </div>
+    <main>
+      {children}
+    </main>
   );
 }

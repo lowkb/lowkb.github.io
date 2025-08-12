@@ -1,0 +1,7 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  background-color: #121517;
+  color: #e5e9f0;
+  font-family: 'Fira Mono', 'Consolas', monospace;
+}

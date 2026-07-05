@@ -57,7 +57,7 @@ select {
 }
 
 .card {
-  background: linear-gradient(180deg, var(--black2), var(--black3));
+  background: var(--black2);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
@@ -87,7 +87,6 @@ select {
   border: 2px solid var(--black);
   box-shadow: 0 0 0 6px var(--black-soft);
 }
-
 
 .profile__hello {
   color: var(--accent);
@@ -122,7 +121,7 @@ select {
   padding: 8px 10px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--black3);
   font-size: 0.85rem;
 }
 
@@ -181,7 +180,7 @@ select {
 
 .info-card {
   border: 1px solid var(--border);
-  background: hsl(0, 0%, 100%, 0.02);
+  background: var(--black3);
   border-radius: var(--radius-md);
   padding: 12px;
 }
@@ -242,7 +241,7 @@ select {
   padding: 12px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  background: hsl(0, 0%, 100%, 0.02);
+  background: var(--black3);
 }
 
 .interest-item__icon {
@@ -267,7 +266,7 @@ select {
   padding: 8px 10px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: hsl(0, 0%, 100%, 0.03);
+  background: var(--black3);
   font-size: 0.85rem;
   font-weight: 600;
 }
@@ -344,4 +343,4 @@ select {
   .section__note p {
     font-size: 0.88rem;
   }
-  }
+}

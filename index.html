@@ -1,240 +1,337 @@
 <!doctype html>
-<html lang="pl">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#151419" />
-    <title>low_kb - Portfolio</title>
+    <meta name="theme-color" content="#121216" />
+    <meta
+      name="description"
+      content="low_kb portfolio — a developer and technical professional with experience in IT, administration, and hands-on work."
+    />
+    <meta name="robots" content="index, follow" />
+    <title>low_kb — Portfolio</title>
     <link rel="stylesheet" crossorigin href="/assets/index-DiitdEgj.css">
   </head>
   <body>
     <div class="page">
-      <header class="card profile">
-        <div class="profile__left">
-          <div class="profile__avatar-box">
-            <img
-              class="profile__avatar"
-              src="/assets/avatar-DanJyykm.png"
-              alt="avatar"
-            />
-          
-          </div>
+      <header class="hero card">
+        <div class="hero__identity">
+          <img
+            class="hero__avatar"
+            src="/assets/avatar-DanJyykm.png"
+            alt="Profile photo of low_kb"
+            width="112"
+            height="112"
+          />
 
-          <div class="profile__info">
-            <span class="profile__hello">👋 Witaj!</span>
-            <h1 class="profile__nickname">low_kb</h1>
-            <p class="profile__role">Fullstack Developer</p>
-          </div>
-        </div>
-
-        <div class="profile__right">
-          <div class="profile__badge">
-            <span>💻</span>
-            <p>JavaScript</p>
-          </div>
-          <div class="profile__badge">
-            <span>⚡</span>
-            <p>Backend</p>
-          </div>
-          <div class="profile__badge">
-            <span>🛠</span>
-            <p>SysAdmin</p>
-          </div>
-        </div>
-      </header>
-      <main class="layout">
-        <section class="card section">
-          <div class="section__head">
-            <p class="section__eyebrow">O mnie</p>
-            <h2 class="section__title">Kim jestem</h2>
-          </div>
-
-          <div class="info-grid">
-            <article class="info-card">
-              <span class="info-card__label">Imię</span>
-              <span class="info-card__value">Adam</span>
-            </article>
-
-            <article class="info-card">
-              <span class="info-card__label">Wiek</span>
-              <span class="info-card__value">20 lat</span>
-            </article>
-
-            <article class="info-card">
-              <span class="info-card__label">Urodziny</span>
-              <span class="info-card__value">14 października</span>
-            </article>
-
-            <article class="info-card">
-              <span class="info-card__label">Pseudonim</span>
-              <span class="info-card__value">low_kb</span>
-            </article>
-          </div>
-
-          <div class="section__note">
-            <p>
-              Cześć, jestem Adam. Na co dzień rozwijam się zarówno w pracy
-              technicznej, jak i w IT oraz programowaniu.
+          <div class="hero__text">
+            <span class="hero__eyebrow">Hello</span>
+            <h1 class="hero__name">low_kb</h1>
+            <p class="hero__role">Full-Stack Developer</p>
+            <p class="hero__summary">
+              I combine practical technical experience with programming and
+              building my own projects.
             </p>
           </div>
+        </div>
+
+        <ul class="hero__chips" aria-label="Main strengths">
+          <li class="chip">
+            <span class="chip__icon" aria-hidden="true"></span>
+            Full-Stack
+          </li>
+
+          <li class="chip">
+            <span class="chip__icon" aria-hidden="true"></span>
+            Backend
+          </li>
+
+          <li class="chip">
+            <span class="chip__icon" aria-hidden="true"></span>
+            Frontend
+          </li>
+
+          <li class="chip">
+            <span class="chip__icon" aria-hidden="true"></span>
+            Database
+          </li>
+        </ul>
+      </header>
+
+      <main class="grid">
+        <section class="card section about" aria-labelledby="about-title">
+          <div class="section__head">
+            <p class="section__eyebrow">About</p>
+            <h2 class="section__title" id="about-title">Who I am</h2>
+          </div>
+
+          <div class="facts">
+            <article class="fact">
+              <span class="fact__label">Name</span>
+              <span class="fact__value">Adam</span>
+            </article>
+
+            <article class="fact">
+              <span class="fact__label">Age</span>
+              <span class="fact__value">20</span>
+            </article>
+
+            <article class="fact">
+              <span class="fact__label">Birthday</span>
+              <span class="fact__value">14 October</span>
+            </article>
+
+            <article class="fact">
+              <span class="fact__label">Nickname</span>
+              <span class="fact__value">low_kb</span>
+            </article>
+          </div>
+
+          <p class="section__text">
+            Hi, I am Adam. I develop both technical skills and software
+            projects. I like clear structure, practical solutions, and code that
+            is easy to grow over time.
+          </p>
         </section>
 
-        <section class="card section">
+        <section
+          class="card section experience"
+          aria-labelledby="experience-title"
+        >
           <div class="section__head">
-            <p class="section__eyebrow">Praca</p>
-            <h2 class="section__title">Doświadczenie zawodowe</h2>
+            <p class="section__eyebrow">Work</p>
+            <h2 class="section__title" id="experience-title">
+              Professional experience
+            </h2>
           </div>
 
           <div class="timeline">
             <article class="timeline__item">
-              <div class="timeline__dot"></div>
+              <div class="timeline__marker" aria-hidden="true"></div>
               <div class="timeline__content">
-                <h3>Obecnie</h3>
+                <h3>Current role</h3>
                 <p>
-                  Ślusarz w stolarce aluminiowej — montaż okien, drzwi, fasad i
-                  ogrodów zimowych oraz rozwój na produkcji.
+                  Aluminum joinery locksmith — installing windows, doors,
+                  facades, and winter gardens, with ongoing growth in
+                  production.
                 </p>
               </div>
             </article>
 
             <article class="timeline__item">
-              <div class="timeline__dot"></div>
+              <div class="timeline__marker" aria-hidden="true"></div>
               <div class="timeline__content">
-                <h3>Wcześniej</h3>
+                <h3>Previous roles</h3>
                 <p>
-                  Monter izolacji przemysłowych, izoler, blacharz, stolarz oraz
-                  prace budowlano-wykończeniowe.
+                  Industrial insulation installer, insulator, sheet metal
+                  worker, carpenter, and construction finishing work.
                 </p>
               </div>
             </article>
 
             <article class="timeline__item">
-              <div class="timeline__dot"></div>
+              <div class="timeline__marker" aria-hidden="true"></div>
               <div class="timeline__content">
-                <h3>Zawód</h3>
+                <h3>Background</h3>
                 <p>
-                  Hydraulik, z praktycznym doświadczeniem technicznym i
-                  manualnym.
+                  Trained as a plumber, with strong practical experience and a
+                  hands-on mindset.
                 </p>
               </div>
             </article>
           </div>
         </section>
 
-        <section class="card section">
+        <section class="card section skills" aria-labelledby="skills-title">
           <div class="section__head">
-            <p class="section__eyebrow">Nauka</p>
-            <h2 class="section__title">W czym się rozwijam</h2>
+            <p class="section__eyebrow">Learning</p>
+            <h2 class="section__title" id="skills-title">
+              What I know and grow
+            </h2>
           </div>
 
-          <div class="tags">
-            <span class="tag">JavaScript</span>
-            <span class="tag">TypeScript</span>
-            <span class="tag">Java</span>
-            <span class="tag">C#</span>
-            <span class="tag">C++</span>
-            <span class="tag">OOP</span>
-            <span class="tag">SOLID</span>
-            <span class="tag">DRY</span>
-            <span class="tag">IT</span>
-            <span class="tag">Sysadmin</span>
+          <div class="skills__groups">
+            <article class="skills__group">
+              <h3 class="skills__group-title">Frontend</h3>
+
+              <div class="tags">
+                <span class="tag">HTML5</span>
+                <span class="tag">CSS3</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">React</span>
+                <span class="tag">Preact</span>
+                <span class="tag">Next.js</span>
+                <span class="tag">Vite</span>
+                <span class="tag">Bootstrap</span>
+              </div>
+            </article>
+
+            <article class="skills__group">
+              <h3 class="skills__group-title">Backend</h3>
+
+              <div class="tags">
+                <span class="tag">Node.js</span>
+                <span class="tag">Bun</span>
+                <span class="tag">Fastify</span>
+                <span class="tag">Express.js</span>
+                <span class="tag">REST API</span>
+                <span class="tag">WebSocket</span>
+                <span class="tag">Socket.IO</span>
+                <span class="tag">ws</span>
+              </div>
+            </article>
+
+            <article class="skills__group">
+              <h3 class="skills__group-title">Databases</h3>
+
+              <div class="tags">
+                <span class="tag">MongoDB</span>
+                <span class="tag">Mongoose</span>
+                <span class="tag">MySQL</span>
+                <span class="tag">Sequelize</span>
+                <span class="tag">SQL</span>
+                <span class="tag">Database Design</span>
+              </div>
+            </article>
+
+            <article class="skills__group">
+              <h3 class="skills__group-title">Authentication & Security</h3>
+
+              <div class="tags">
+                <span class="tag">JWT</span>
+                <span class="tag">OAuth2</span>
+                <span class="tag">CORS</span>
+                <span class="tag">Cookies</span>
+              </div>
+            </article>
+
+            <article class="skills__group">
+              <h3 class="skills__group-title">Tools & DevOps</h3>
+
+              <div class="tags">
+                <span class="tag">Git</span>
+                <span class="tag">GitHub</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Linux</span>
+                <span class="tag">PM2</span>
+                <span class="tag">Nginx</span>
+                <span class="tag">CI/CD</span>
+              </div>
+            </article>
+
+            <article class="skills__group">
+              <h3 class="skills__group-title">Programming Concepts</h3>
+
+              <div class="tags">
+                <span class="tag">OOP</span>
+                <span class="tag">SOLID</span>
+                <span class="tag">DRY</span>
+                <span class="tag">Clean Code</span>
+                <span class="tag">Design Patterns</span>
+                <span class="tag">Unit Testing</span>
+              </div>
+            </article>
           </div>
 
-          <div class="section__note">
-            <p>
-              Najbardziej skupiam się na programowaniu, administracji serwerami
-              i systemami oraz rozwijaniu praktycznych umiejętności
-              technicznych.
-            </p>
-          </div>
+          <p class="section__text">
+            I focus on programming, server and system administration, and
+            building practical technical skills.
+          </p>
         </section>
 
-        <section class="card section">
+        <section
+          class="card section interests"
+          aria-labelledby="interests-title"
+        >
           <div class="section__head">
-            <p class="section__eyebrow">Hobby</p>
-            <h2 class="section__title">Co robię po pracy</h2>
+            <p class="section__eyebrow">Hobbies</p>
+            <h2 class="section__title" id="interests-title">
+              What I do after work
+            </h2>
           </div>
 
           <div class="interest-list">
-            <article class="interest-item">
-              <span class="interest-item__icon">💻</span>
-              <div class="interest-item__content">
-                <h3>Programowanie</h3>
+            <article class="interest">
+              <div class="interest__icon" aria-hidden="true">💻</div>
+              <div class="interest__content">
+                <h3>Programming</h3>
                 <p>
-                  Rozwijam się w JS, TS i innych technologiach, tworząc własne
-                  projekty i ucząc się nowych rzeczy.
+                  I keep developing in JS, TS, and other technologies by
+                  building personal projects and learning new tools.
                 </p>
               </div>
             </article>
 
-            <article class="interest-item">
-              <span class="interest-item__icon">🖥️</span>
-              <div class="interest-item__content">
-                <h3>IT i administracja</h3>
+            <article class="interest">
+              <div class="interest__icon" aria-hidden="true">🖥️</div>
+              <div class="interest__content">
+                <h3>IT and administration</h3>
                 <p>
-                  Interesuję się serwerami, systemami operacyjnymi i szeroko
-                  pojętym światem IT.
+                  I am interested in servers, operating systems, and the broader
+                  IT world.
                 </p>
               </div>
             </article>
 
-            <article class="interest-item">
-              <span class="interest-item__icon">🎮</span>
-              <div class="interest-item__content">
-                <h3>Gry na PC</h3>
+            <article class="interest">
+              <div class="interest__icon" aria-hidden="true">🎮</div>
+              <div class="interest__content">
+                <h3>PC gaming</h3>
                 <p>
-                  W wolnym czasie gram na komputerze i odpoczywam przy
-                  ulubionych tytułach.
+                  In my free time I play on PC and relax with my favorite
+                  titles.
                 </p>
               </div>
             </article>
 
-            <article class="interest-item">
-              <span class="interest-item__icon">🪵</span>
-              <div class="interest-item__content">
-                <h3>Warsztat</h3>
+            <article class="interest">
+              <div class="interest__icon" aria-hidden="true">🪵</div>
+              <div class="interest__content">
+                <h3>Workshop projects</h3>
                 <p>
-                  Lubię pracę manualną i własne projekty z drewna oraz innych
-                  materiałów.
+                  I enjoy hands-on work and building things from wood and other
+                  materials.
                 </p>
               </div>
             </article>
           </div>
         </section>
 
-        <section class="card section">
+        <section class="card section values" aria-labelledby="values-title">
           <div class="section__head">
-            <p class="section__eyebrow">Inne</p>
-            <h2 class="section__title">Dodatkowe informacje</h2>
+            <p class="section__eyebrow">Approach</p>
+            <h2 class="section__title" id="values-title">How I work</h2>
           </div>
 
           <p class="section__text">
-            Łączę praktyczne doświadczenie zawodowe z rozwojem w IT. Lubię
-            działać konkretnie, rozwijać się krok po kroku i tworzyć rzeczy,
-            które mają sens.
+            I value simplicity, readability, and solutions that are easy to
+            extend. I prefer steady work, clean structure, and finishing what I
+            start.
           </p>
 
-          <div class="section__note">
+          <div class="note">
             <p>
-              Jeśli chcesz, mogę też przerobić to na bardziej „premium” układ
-              portfolio z lepszym hierarchy, ikonami i sekcją kontaktową.
+              I can also turn this into a more premium version with projects,
+              social links, and a stronger hero section.
             </p>
           </div>
         </section>
 
-        <section class="card section contact">
+        <section class="card section contact" aria-labelledby="contact-title">
           <div class="section__head">
-            <p class="section__eyebrow">Kontakt</p>
-            <h2 class="section__title">Otwartość na nowe projekty</h2>
+            <p class="section__eyebrow">Contact</p>
+            <h2 class="section__title" id="contact-title">
+              Open to new projects
+            </h2>
           </div>
 
           <p class="section__text">
-            Jeśli potrzebujesz osoby, która łączy techniczne myślenie,
-            praktyczne doświadczenie i konsekwentny rozwój w IT, to jesteś we
-            właściwym miejscu.
+            If you need someone who combines technical thinking, practical
+            experience, and consistent growth in IT, you are in the right place.
           </p>
         </section>
       </main>
